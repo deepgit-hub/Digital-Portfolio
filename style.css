@@ -1,4 +1,16 @@
-*{
+.name{
+      background-color: black;
+      color: goldenrod;
+      padding: 20px;
+      margin: 10px;
+   }
+.name:hover{
+    color: gold;
+    cursor: pointer;
+}
+.name h1{
+      display: inline;
+   }*{
     cursor: pointer;
     
     
@@ -18,7 +30,57 @@
    }
 .name h4{
       display: inline;
-      margin-left: 750px;
+      float: right;
+}
+.links{
+    text-align: center;
+    margin: 20px;
+    
+}
+.links h3{
+        background-color:aqua;
+        color: red;
+        display: inline;
+    }
+.aboutHead,.achievementshead,.certhead,.imagehead,.techhead,.prohead,.youhead,.contacthead,.softhead{
+    background-color: black;
+    color: goldenrod;
+    display: inline;
+    padding: 10px;
+    margin: 10px;
+    margin-bottom: 15px;
+}
+.aboutHead:hover,
+.achievementshead:hover,
+.certhead:hover,
+.imagehead:hover,
+.techhead:hover,
+.prohead:hover,
+.youhead:hover,
+.contacthead:hover,
+.softhead:hover {
+    color: gold;
+}
+
+.Videos, #videos{
+    width: 100%;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+}
+
+
+.contact{
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+
+
+.name h4{
+      display: inline;
+      
    }
 .links{
     text-align: center;
@@ -83,5 +145,6 @@
     text-align: center;
     margin-bottom: 5px;
 }
+
 
 
