@@ -3,34 +3,19 @@
 <head>
     <title>Deepak Portfolio</title>
     <link rel="icon" href="Deepak.jpg" ><!-- This is the link where the icon of the Browser apeears -->        
+    <link rel="stylesheet" href="style.css">
 
 </head>
 <body>
-<u><style>
-   div{
-      background-color: black;
-      color: gold;
-      padding: 20px;
-      margin: 10px;
-
-   }
-   h1{
-      display: inline;
-   }
-   h4{
-      display: inline;
-      margin-left: 750px;
-   }
-</style>
-<div>
+<u>
+<div class="name">
 
 <h1>Deepak L</h1>
 <h4>This Portfolio will help you to know more about me...</h4>
 </div>
-
-<center>    
+<div class="links">    
 <nav> <!-- Navigation -->
-  <h3 align="center"> 
+  <h3> 
     <a href="#about_me">About Me</a> ||
     <a href="#skills">Skills</a>||  
     <a href="projects">Projects</a> ||  
@@ -40,12 +25,12 @@
     <a href="#videos">YouTube References</a> ||
     <a href="#contact">Contact Info</a>
   </h3>
-</nav>
-
-</center>
-<hr> 
+</nav> 
+</div>
+<div class="aboutme">
 <section id="about_me">   <!-- Navigation , to navigation we give name for each sections , the name used here must give in navigation --> 
-<h3>🙋‍♂️About me </h3>   
+    
+<h3 class="aboutHead">🙋‍♂️About me </h3>   
 <ul type="square">
     <li> <b>Deepak L </b>Pursuing B.Sc Computer Secience at Don Bosco College , Yelagiri Hills.</li>
     <br>
@@ -59,9 +44,11 @@
    <br> 
 </ul>
 </section>    
-<hr>
+</div>
+<br>
+<div class="Techskills">
 <section id="skills">
-<h3>🧑‍💻Technical Skills</h3>
+<h3 class="techhead">🧑‍💻Technical Skills</h3>
 <ul type="circle">
     <li>Programming : <b>c++,python,DSA(basics),html,css,javascript</b></li>
     <br>
@@ -69,7 +56,9 @@
     <br>
     <li>Tools: <b>Git,VS code</b></li>
 </ul>
-<h3>🤝 Soft Skills</h3>   
+</div>
+<div class="softskills">
+<h3 class="softhead">🤝 Soft Skills</h3>   
 <ul>
     <li><b>Public Speaking</b></li>
     <br>
@@ -77,9 +66,11 @@
     <br>
     <li><b>Communication and teamwork(Organized fresher's day in college)</b></li>
 </ul>  
-<hr>    
+</div>
+<br>
+<div class="projetcs">
 <section id="projects">
-<h3>Projects</h3>
+<h3 class="prohead">🖥️ Projects</h3>
 <ul>
     <li>🖥️ Student Record System using c++ which is used to store student data like roll number,blood group etc. </li>
     <br>
@@ -92,10 +83,12 @@
     <li>✅ To-Do List using c++</li>
     <br>
     <li>🌐 Digital Portfolio Page</li>
-</ul>   
-<hr>    
+</ul>
+</div>     
+<br>
+<div class="achievements">
 <section id="achievements">    
-<h3>🎓 Achievements</h3>
+<h3 class="achievementshead">🎓 Achievements</h3>
 <ol>
     <li>🎤 Delivered a <b>Teacher’s Day Speech</b> at my college.</li>
     <br>
@@ -113,19 +106,22 @@
     <br>
     <li>Won First Price in <b>Book Review competition</b> conducted by Literacy club</li>
 </ol>
-<hr>
 </section>    
+</div>
+<div class="cert">
 <section id="certifications">    
-<h3>🎓 Certifications</h3>
+<h3 class="certhead">🎓 Certifications</h3>
 <ul>
     <li>💻 <b>HDCA</b> – Honours Diploma in Computer Applications</li>
     <br>
     <li>🌐 <b>Naan Mudhalvan</b> – Fundamentals of Web Development</li>
 </ul>
-<hr>
+<br>
 </section>
+</div>
+<div class="Gallery">
 <section id="gallery">    
-<h3>📸 Image Gallery</h3>  
+<h3 class="imagehead">📸 Image Gallery</h3>  
     <table>
     <tr>   
     <td>   
@@ -197,41 +193,28 @@
     </tr>   
     <tr>    
     </table>
-<hr>
 <br>
+</div>
+<div class="Videos">
 <section id="videos">    
-<h3>🎬  YouTube References</h3>
-<center>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/u0Pw3VKqtdQ?si=cO4t3A5xOvn_L-hk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<h3 class="youhead">🎬  YouTube References</h3>
+<br>
+<iframe width="560" height="315"  src="https://www.youtube.com/embed/u0Pw3VKqtdQ?si=cO4t3A5xOvn_L-hk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 <h4>This video presentation explains the concepts of Virtual Machines and Dual Boot Systems in detail. I have clearly demonstrated how multiple operating systems can be run on a single computer using these two approaches. The session also covers the advantages and disadvantages of both methods, along with a live demonstration for better understanding.</h4>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/mkakJ7yekEc?si=_SQDTEe2GNqxBX57" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 <h4>In this video, I delivered an inspirational speech for first-year students on Fresher’s Day, where I shared five key principles to keep in mind for achieving success in college life.</h4>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/sDNKzwOV4p4?si=Nuvf7VdX-0r15SPa" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 <h4>This video features my presentation on Cybersecurity and Ethical Hacking, where I discussed topics such as what cybersecurity is, the concept of ethical hacking, and the different types of hackers. I also explained preventive measures against cyber threats and shared insights about various hacking devices. Additionally, I engaged in an interactive session by answering questions from both students and faculty members of my department.</h4>
-</center></section>
-<hr>
+</section>
+</div>
+<br>
+<div class="contact">
 <section id="contact">    
-<h3>🔗 Contact Information</h3>    
-<center>        
-    <table>
-        <tr>
-            <th>📱 Phone</th>
-            <th><h3>9345738927</h3></th>
-            
-           
-        </tr>
-        <tr>
-            <th>📧 Email</th>
-            <th><h4>deepak2911001@gmail.com</h4></th>
-            <th></th>
-        </tr>
-        <tr>
-            <th>🌐 Linkedin</th>
-            <th><a href="https://www.linkedin.com/in/deepaklogu/">Linkedin</a></th>
-        </tr>
-    </table>    
-</center>
+<h3 class="contacthead">🔗 Contact Information</h3><br>    
+    <h4 class="phone">📱 Phone : 9345738927</h5>
+    <h4 class="mail">📧Email : deepak2911001</h5>
+    <a href="https://www.linkedin.com/in/deepaklogu/"><h4 class="link">🌐 Linkedin</h5></a>
+</div>        
 </section>    
 </body>
-<center><footer><h2>💪 Turing code into real world solutions</h2></footer></center>    
 </html>
