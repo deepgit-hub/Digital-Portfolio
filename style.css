@@ -1,33 +1,18 @@
-.name{
+.name{                               /* here we are particularly seclecting a class called name and while calling we have to use .name */
       background-color: black;
       color: goldenrod;
       padding: 20px;
       margin: 10px;
    }
-.name:hover{
+.name:hover{                      /* here hover is if we kept our mouse on that it will change its property as per we give */
     color: gold;
     cursor: pointer;
 }
-.name h1{
-      display: inline;
-   }*{
-    cursor: pointer;
-    
-    
-}
-.name{
-      background-color: black;
-      color: goldenrod;
-      padding: 20px;
-      margin: 10px;
-   }
-.name:hover{
-    color: gold;
-    cursor: pointer;
-}
-.name h1{
+.name h1{                         /* here we can also style a specific tag inside a section */ 
       display: inline;
    }
+    
+}
 .name h4{
       display: inline;
       float: right;
@@ -42,7 +27,15 @@
         color: red;
         display: inline;
     }
-.aboutHead,.achievementshead,.certhead,.imagehead,.techhead,.prohead,.youhead,.contacthead,.softhead{
+.aboutHead,
+.achievementshead,
+.certhead,
+.imagehead,
+.techhead,
+.prohead,
+.youhead,
+.contacthead,
+.softhead{  /* here I want to apply this style to all heading i can do with the help of comma , and if i do that it will apply same style for everything
     background-color: black;
     color: goldenrod;
     display: inline;
@@ -62,7 +55,7 @@
     color: gold;
 }
 
-.Videos, #videos{
+.Videos, #videos{  /* I don't know about this chat gpt gives this -->
     width: 100%;
     display: flex !important;
     flex-direction: column !important;
@@ -77,74 +70,6 @@
 }
 
 
-
-.name h4{
-      display: inline;
-      
-   }
-.links{
-    text-align: center;
-    margin: 20px;
-    
-}
-.links h3{
-        background-color:aqua;
-        color: red;
-        display: inline;
-    }
-.aboutHead,.achievementshead,.certhead,.imagehead,.techhead,.prohead,.youhead,.contacthead,.softhead{
-    background-color: black;
-    color: goldenrod;
-    display: inline;
-    padding: 10px;
-    margin: 10px;
-    margin-bottom: 15px;
-}
-.aboutHead:hover{
-    color: gold;
-}
-
-.techhead:hover{
-    color: gold;
-}
-
-.softhead:hover{
-    color: gold;
-}
-
-.prohead:hover{
-    color: gold;
-}
-
-.achievementshead:hover{
-    color: gold;
-}
-
-.certhead:hover{
-    color: gold;
-}
-
-.imagehead:hover{
-    color: gold;
-}
-
-
-.youhead:hover{
-    color: gold;
-}
-.Videos, #videos{
-    width: 100%;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    text-align: center !important;
-}
-
-
-.contact{
-    text-align: center;
-    margin-bottom: 5px;
-}
 
 
 
