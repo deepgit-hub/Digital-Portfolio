@@ -1,5 +1,7 @@
 *{
-    cursor: pointer;    
+    cursor: pointer;
+    
+    
 }
 .name{
       background-color: black;
@@ -11,15 +13,16 @@
     color: gold;
     cursor: pointer;
 }
-   h1{
+.name h1{
       display: inline;
    }
-   h4{
+.name h4{
       display: inline;
       margin-left: 750px;
    }
 .links{
     text-align: center;
+    margin: 20px;
     
 }
 .links h3{
@@ -27,85 +30,42 @@
         color: red;
         display: inline;
     }
-.aboutHead,.techhead,.softhead,.prohead,.achievementshead,.certhead,.imagehead,.youhead,.contacthead{
-    display: inline-block;
+.aboutHead,.achievementshead,.certhead,.imagehead,.techhead,.prohead,.youhead,.contacthead,.softhead{
     background-color: black;
     color: goldenrod;
+    display: inline;
     padding: 10px;
     margin: 10px;
-    
-   
+    margin-bottom: 15px;
 }
 .aboutHead:hover{
     color: gold;
 }
-.techhead{
-    display: inline-block;
-    background-color: black;
-    color: goldenrod;
-    padding: 10px;
-    margin: 10px;   
-}
+
 .techhead:hover{
     color: gold;
 }
-.softhead{
-    display: inline-block;
-    background-color: black;
-    color: goldenrod;
-    padding: 10px;
-    margin: 10px;   
-}
+
 .softhead:hover{
     color: gold;
 }
-.prohead{
-    display: inline-block;
-    background-color: black;
-    color: goldenrod;
-    padding: 10px;
-    margin: 10px;   
-}
+
 .prohead:hover{
     color: gold;
 }
-.achievementshead{
-    display: inline-block;
-    background-color: black;
-    color: goldenrod;
-    padding: 10px;
-    margin: 10px;   
-}
+
 .achievementshead:hover{
     color: gold;
 }
-.certhead{
-    display: inline-block;
-    background-color: black;
-    color: goldenrod;
-    padding: 10px;
-    margin: 10px;   
-}
+
 .certhead:hover{
     color: gold;
 }
-.imagehead{
-    display: inline-block;
-    background-color: black;
-    color: goldenrod;
-    padding: 10px;
-    margin: 10px;   
-}
+
 .imagehead:hover{
     color: gold;
 }
-.youhead{
-    display: inline-block;
-    background-color: black;
-    color: goldenrod;
-    padding: 10px;
-    margin: 10px;
-}
+
 
 .youhead:hover{
     color: gold;
@@ -118,17 +78,10 @@
     text-align: center !important;
 }
 
-.contacthead{
-    display: inline-block;
-    background-color: black;
-    color: goldenrod;
-    padding: 10px;
-    margin: 10px;
-}
-.phone{
+
+.contact{
     text-align: center;
     margin-bottom: 5px;
 }
-
 
 
