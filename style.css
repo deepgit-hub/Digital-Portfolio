@@ -35,7 +35,7 @@
 .prohead,
 .youhead,
 .contacthead,
-.softhead{  /* here I want to apply this style to all heading i can do with the help of comma , and if i do that it will apply same style for everything
+.softhead{  /* here I want to apply this style to all heading i can do with the help of comma , and if i do that it will apply same style for everything */
     background-color: black;
     color: goldenrod;
     display: inline;
@@ -68,6 +68,7 @@
     text-align: center;
     margin-bottom: 5px;
 }
+
 
 
 
