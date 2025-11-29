@@ -54,6 +54,17 @@
 .softhead:hover {
     color: gold;
 }
+.aboutHead:hover,
+.achievementshead:hover,
+.certhead:hover,
+.imagehead:hover,
+.techhead:hover,
+.prohead:hover,
+.youhead:hover,
+.contacthead:hover,
+.softhead:hover {
+    cursor: pointer;
+}
 
 .Videos, #videos{  /* I don't know about this chat gpt gives this -->
     width: 100%;
@@ -68,6 +79,7 @@
     text-align: center;
     margin-bottom: 5px;
 }
+
 
 
 
