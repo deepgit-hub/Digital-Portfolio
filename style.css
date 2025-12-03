@@ -1,24 +1,30 @@
+
 .name{                               /* here we are particularly seclecting a class called name and while calling we have to use .name */
       background-color: black;
       color: goldenrod;
       padding: 20px;
       margin: 10px;
+      border-radius: 10px;
    }
 .name:hover{                      /* here hover is if we kept our mouse on that it will change its property as per we give */
     color: gold;
     cursor: pointer;
+    border-radius: 10px;
 }
 .name h1{                         /* here we can also style a specific tag inside a section */ 
       display: inline;
+      border-radius: 10px;
    }
     
 .name h4{
       display: inline;
       float: right;
+      border-radius: 10px;
 }
 .links{
     text-align: center;
     margin: 20px;
+
     
 }
 .links h3{
@@ -37,10 +43,11 @@
 .softhead{  /* here I want to apply this style to all heading i can do with the help of comma , and if i do that it will apply same style for everything */
     background-color: black;
     color: goldenrod;
-    display: inline;
+    display: inline-block;
     padding: 10px;
     margin: 10px;
     margin-bottom: 15px;
+    border-radius: 10px;
 }
 .aboutHead:hover,
 .achievementshead:hover,
@@ -52,6 +59,7 @@
 .contacthead:hover,
 .softhead:hover {
     color: gold;
+    border-radius: 10px;
 }
 .aboutHead:hover,
 .achievementshead:hover,
@@ -63,6 +71,7 @@
 .contacthead:hover,
 .softhead:hover {
     cursor: pointer;
+    border-radius: 10px;
 }
 
 .Videos, #videos/* I don't know about this chat gpt gives this */
@@ -72,13 +81,39 @@
     flex-direction: column !important;
     align-items: center !important;
     text-align: center !important;
+    border-radius: 10px;
 }
 
 
 .contact{
     text-align: center;
     margin-bottom: 5px;
+    border-radius: 10px;
 }
+.Gallery , .description{
+    margin: 15px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    max-width: 1500px;
+    width: 100%;  
+}
+
+
+.Gallery img{
+    
+   border-radius: 10px;
+    
+    
+}
+.description_left{
+            gap: 50px;
+            max-width: 430px;
+            flex-direction: column;
+}
+
+
+
 
 
 
