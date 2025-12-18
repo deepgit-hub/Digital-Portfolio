@@ -1,37 +1,54 @@
+/* ---------- GLOBAL RESET ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-.name{                               /* here we are particularly seclecting a class called name and while calling we have to use .name */
-      background-color: black;
-      color: goldenrod;
-      padding: 20px;
-      margin: 10px;
-      border-radius: 10px;
-   }
-.name:hover{                      /* here hover is if we kept our mouse on that it will change its property as per we give */
-    color: gold;
-    cursor: pointer;
+/* ---------- HEADER ---------- */
+.name {
+    background-color: black;
+    color: goldenrod;
+    padding: 20px;
+    margin: 10px;
     border-radius: 10px;
 }
-.name h1{                         /* here we can also style a specific tag inside a section */ 
-      display: inline;
-      border-radius: 10px;
-   }
-    
-.name h4{
-      display: inline;
-      float: right;
-      border-radius: 10px;
+
+.name:hover {
+    color: gold;
+    cursor: pointer;
 }
-.links{
+
+.name h1 {
+    display: inline-block;
+}
+
+.name h4 {
+    display: inline-block;
+    float: right;
+    margin-top: 10px;
+}
+
+/* ---------- NAVIGATION ---------- */
+.links {
     text-align: center;
     margin: 20px;
-
-    
 }
-.links h3{
-        background-color:aqua;
-        color: red;
-        display: inline;
-    }
+
+.links h3 {
+    background-color: aqua;
+    color: red;
+    display: inline-block;
+    padding: 8px 12px;
+    border-radius: 8px;
+}
+
+.links a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ---------- COMMON HEADINGS ---------- */
 .aboutHead,
 .achievementshead,
 .certhead,
@@ -40,7 +57,7 @@
 .prohead,
 .youhead,
 .contacthead,
-.softhead{  /* here I want to apply this style to all heading i can do with the help of comma , and if i do that it will apply same style for everything */
+.softhead {
     background-color: black;
     color: goldenrod;
     display: inline-block;
@@ -49,6 +66,7 @@
     margin-bottom: 15px;
     border-radius: 10px;
 }
+
 .aboutHead:hover,
 .achievementshead:hover,
 .certhead:hover,
@@ -59,64 +77,141 @@
 .contacthead:hover,
 .softhead:hover {
     color: gold;
-    border-radius: 10px;
-}
-.aboutHead:hover,
-.achievementshead:hover,
-.certhead:hover,
-.imagehead:hover,
-.techhead:hover,
-.prohead:hover,
-.youhead:hover,
-.contacthead:hover,
-.softhead:hover {
     cursor: pointer;
-    border-radius: 10px;
 }
 
-.Videos, #videos/* I don't know about this chat gpt gives this */
-{
+/* ---------- SECTIONS ---------- */
+.aboutme,
+.Techskills,
+.softskills,
+.projects,
+.achievements,
+.cert {
+    padding: 10px 20px;
+}
+
+/* ---------- VIDEO SECTION ---------- */
+.Videos {
     width: 100%;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    text-align: center !important;
-    border-radius: 10px;
-}
-
-
-.contact{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    margin-bottom: 5px;
+}
+
+/* Make iframe responsive */
+.Videos iframe {
+    width: 80%;
+    max-width: 560px;
+    height: 315px;
+    margin-bottom: 20px;
     border-radius: 10px;
 }
-.Gallery , .description{
-    margin: 15px;
+
+/* ---------- CONTACT ---------- */
+.contact {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* ---------- GALLERY ---------- */
+.Gallery {
+    margin: 15px auto;
     display: flex;
     align-items: center;
     gap: 20px;
     max-width: 1500px;
-    width: 100%;  
+    width: 100%;
 }
 
-
-.Gallery img{
-    
-   border-radius: 10px;
-    
-    
-}
-.description_left{
-            gap: 50px;
-            max-width: 430px;
-            flex-direction: column;
+.Gallery img {
+    width: 300px;
+    max-width: 100%;
+    border-radius: 10px;
 }
 
+/* Description blocks */
+.description {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
 
+.description_left,
+.description_right,
+.description_left_Gandhi {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 430px;
+}
 
+/* ---------- LIST SPACING ---------- */
+ul li,
+ol li {
+    margin-bottom: 10px;
+}
 
+/* ================================================= */
+/* ============== MOBILE RESPONSIVE ================= */
+/* ================================================= */
 
+@media (max-width: 768px) {
 
+    /* Header stack */
+    .name h1,
+    .name h4 {
+        display: block;
+        float: none;
+        text-align: center;
+    }
 
+    /* Navigation wrap */
+    .links h3 {
+        display: block;
+        line-height: 1.8;
+    }
 
+    /* Gallery stack */
+    .Gallery {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .description {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Videos full width */
+    .Videos iframe {
+        width: 95%;
+        height: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    /* Smaller text spacing */
+    body {
+        font-size: 15px;
+    }
+
+    .aboutHead,
+    .achievementshead,
+    .certhead,
+    .imagehead,
+    .techhead,
+    .prohead,
+    .youhead,
+    .contacthead,
+    .softhead {
+        font-size: 16px;
+        padding: 8px;
+    }
+
+    .Videos iframe {
+        height: 220px;
+    }
+}
 
