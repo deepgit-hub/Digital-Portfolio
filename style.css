@@ -1,293 +1,281 @@
-/* ---------- GLOBAL RESET ---------- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-* {
-    -webkit-tap-highlight-color: transparent;
-}
+
 body {
+    background: black;
     color: goldenrod;
-}
-body {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-    font-size: 16px;
+    font-family: system-ui, sans-serif;
     line-height: 1.6;
 }
-h1 {
-    font-size: 32px;
-    letter-spacing: 0.5px;
+
+/* HERO */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    padding: 60px 20px;
+    text-align: left;
 }
 
-h3 {
-    font-size: 20px;
+.profile-img {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    border: 4px solid goldenrod;
+    object-fit: cover;
 }
 
-h4 {
-    font-size: 16px;
+.hero-buttons {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+/* BUTTONS */
+.btn {
+    padding: 10px 16px;
+    border-radius: 8px;
+    text-decoration: none;
     font-weight: 500;
+    display: inline-block;
 }
-p,
-li {
-    line-height: 1.7;
-    letter-spacing: 0.2px;
+
+.primary {
+    background: goldenrod;
+    color: black;
 }
-ul {
+
+.secondary {
+    border: 1px solid goldenrod;
+    color: goldenrod;
+}
+
+/* ========== STICKY NAVBAR ========== */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+
+    padding: 15px;
+    background-color: black;
+
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+}
+
+.navbar a {
+    color: goldenrod;
+    text-decoration: none;
+}
+
+/* SECTIONS */
+.section {
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    background: #111;
+    padding: 10px 15px;
+    border-radius: 10px;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+/* SKILLS */
+.skills-list li {
+    margin-bottom: 10px;
+}
+
+/* PROJECTS */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+.project-card {
+    background: #111;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.project-card a {
+    margin-top: 10px;
+}
+
+/* GALLERY */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* YOUTUBE */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+}
+
+.video-grid iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 12px;
+}
+
+/* FOOTER */
+.footer {
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid #333;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+}
+/* ========== BUTTON HOVER (GLOBAL FIX) ========== */
+.btn {
+    transition: background-color 0.25s ease,
+                color 0.25s ease,
+                transform 0.25s ease;
+}
+
+/* Primary button hover */
+.primary:hover {
+    background-color: gold;
+    color: black;
+    transform: translateY(-2px);
+}
+
+/* Secondary button hover (View Code) */
+.secondary:hover {
+    background-color: goldenrod;
+    color: black;
+    transform: translateY(-2px);
+}
+
+/* Prevent overlap inside project cards */
+.project-card .btn {
+    display: inline-block;
+    margin-top: 10px;
+}
+.btn {
+    cursor: pointer;
+}
+/* Gallery captions */
+.gallery-item {
+    background: #111;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.gallery-item p {
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+}
+/* YouTube captions */
+.video-item p {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 14px;
+}
+/* ========== IMAGE GALLERY HOVER ========== */
+.gallery-item {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(218, 165, 32, 0.25); /* golden glow */
+}
+
+/* ========== YOUTUBE VIDEO HOVER ========== */
+.video-item {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.video-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(218, 165, 32, 0.25);
+}
+/* Make gallery image captions bold */
+.gallery-item p {
+    font-weight: 600;
+}
+
+/* Make YouTube video captions bold */
+.video-item p {
+    font-weight: 600;
+}
+/* ========== NAVBAR LINK HOVER EFFECT ========== */
+.navbar a {
+    position: relative;
+    transition: color 0.25s ease;
+}
+
+/* underline effect */
+.navbar a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0%;
+    height: 2px;
+    background-color: gold;
+    transition: width 0.25s ease;
+}
+
+/* hover state */
+.navbar a:hover {
+    color: gold;
+}
+
+.navbar a:hover::after {
+    width: 100%;
+}
+/* ========== SMOOTH SCROLL ========== */
+html {
+    scroll-behavior: smooth;
+}
+/* ========== ACHIEVEMENTS ========== */
+.achievements-list {
     padding-left: 20px;
 }
-@media (max-width: 768px) {
-    body {
-        font-size: 15px;
-    }
 
-    h1 {
-        font-size: 26px;
-    }
-
-    h3 {
-        font-size: 18px;
-    }
-}
-
-
-
-/* ---------- HEADER ---------- */
-.name {
-    background-color: black;
-    color: goldenrod;
-    padding: 20px;
-    margin: 10px;
-    border-radius: 10px;
-}
-
-.name:hover {
-    color: gold;
-    cursor: pointer;
-}
-
-.name h1 {
-    display: inline-block;
-}
-
-.name h4 {
-    display: inline-block;
-    float: right;
-    margin-top: 10px;
-}
-
-/* ---------- NAVIGATION ---------- */
-.links {
-    text-align: center;
-    margin: 20px;
-}
-
-.links h3{
-    background-color: #111;     
-    color: goldenrod;            
-    display: inline-block;
-    padding: 10px 15px;
-    border-radius: 8px;
-}
-.links h3:hover{
-    background-color: black;
-    color: gold;
-}
-
-
-.links a {
-    text-decoration: none;
-    color: inherit;
-}
-
-/* ---------- COMMON HEADINGS ---------- */
-.aboutHead,
-.achievementshead,
-.certhead,
-.imagehead,
-.techhead,
-.prohead,
-.youhead,
-.contacthead,
-.softhead {
-    background-color: black;
-    color: goldenrod;
-    display: inline-block;
-    padding: 10px;
-    margin: 10px;
+.achievements-list li {
     margin-bottom: 15px;
-    border-radius: 10px;
+    line-height: 1.7;
+    font-size: 16px;
 }
-
-.aboutHead:hover,
-.achievementshead:hover,
-.certhead:hover,
-.imagehead:hover,
-.techhead:hover,
-.prohead:hover,
-.youhead:hover,
-.contacthead:hover,
-.softhead:hover {
-    color: gold;
-    cursor: pointer;
-}
-
-/* ---------- SECTIONS ---------- */
-.aboutme,
-.Techskills,
-.softskills,
-.projects,
-.achievements,
-.cert {
-    padding: 10px 20px;
-}
-
-/* ---------- VIDEO SECTION ---------- */
-.Videos {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-/* Make iframe responsive */
-.Videos iframe {
-    width: 80%;
-    max-width: 560px;
-    height: 315px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-}
-
-/* ---------- CONTACT ---------- */
-.contact {
-    text-align: center;
-    margin-bottom: 10px;
-}
-
-/* ---------- GALLERY ---------- */
-.Gallery {
-    margin: 15px auto;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    max-width: 1500px;
-    width: 100%;
-}
-
-.Gallery img {
-    width: 300px;
-    max-width: 100%;
-    border-radius: 10px;
-}
-
-/* Description blocks */
-.description {
-    display: flex;
-    gap: 20px;
-    width: 100%;
-}
-
-.description_left,
-.description_right,
-.description_left_Gandhi {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    max-width: 430px;
-}
-
-/* ---------- LIST SPACING ---------- */
-ul li,
-ol li {
-    margin-bottom: 10px;
-}
-
-/* ================================================= */
-/* ============== MOBILE RESPONSIVE ================= */
-/* ================================================= */
-
-@media (max-width: 768px) {
-
-    /* Header stack */
-    .name h1,
-    .name h4 {
-        display: block;
-        float: none;
-        text-align: center;
-    }
-
-    /* Navigation wrap */
-    .links h3 {
-        display: block;
-        line-height: 1.8;
-    }
-
-    /* Gallery stack */
-    .Gallery {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .description {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    /* Videos full width */
-    .Videos iframe {
-        width: 95%;
-        height: 250px;
-    }
-}
-
-@media (max-width: 480px) {
-
-    /* Smaller text spacing */
-    body {
-        font-size: 15px;
-    }
-
-    .aboutHead,
-    .achievementshead,
-    .certhead,
-    .imagehead,
-    .techhead,
-    .prohead,
-    .youhead,
-    .contacthead,
-    .softhead {
-        font-size: 16px;
-        padding: 8px;
-    }
-
-    .Videos iframe {
-        height: 220px;
-    }
-}
-.video-box {
-    margin-bottom: 40px;
-    text-align: center;
+/* ========== ABOUT ME WIDTH FIX ========== */
+#about.p {
     max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
-
-.video-box iframe {
-    width: 100%;
-    max-width: 560px;
-    height: 315px;
-    border-radius: 10px;
-}
-
-.video-box p {
-    margin-top: 10px;
-    color: goldenrod;
-    font-size: 15px;
-    line-height: 1.6;
-}
-
-
-
-
-
-
