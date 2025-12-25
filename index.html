@@ -5,6 +5,8 @@
     <title>Deepak L | Portfolio</title>
     <link rel="icon" href="Deepak Teacher's Day.jpg">
     <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 </head>
 <body>
 
@@ -14,7 +16,7 @@
     <div class="hero-text">
         <h1>Deepak L</h1>
         <h2>Computer Science Student</h2>
-        <p>Java • Problem Solving • Cybersecurity Enthusiastic</p>
+        <p>Java • Freelancer • Cybersecurity Enthusiastic</p>
 
         <div class="hero-buttons">
             <a href="#projects" class="btn primary">View Projects</a>
@@ -30,8 +32,10 @@
     <a href="#projects">Projects</a>
     <a href="#gallery">Gallery</a>
     <a href="#videos">YouTube</a>
+    <a href="#services">Services</a>
     <a href="#contact">Contact</a>
 </nav>
+
 
 <!-- ========== ABOUT ========== -->
 <section id="about" class="section">
@@ -188,6 +192,47 @@
 
     </div>
 </section>
+<!-- ========== SERVICES ========== -->
+<section id="services" class="section">
+    <h3 class="section-title">🛠️ Services</h3>
+
+    <div class="project-grid">
+
+        <div class="project-card">
+            <h4>Static Website Development</h4>
+            <p>
+                Clean, responsive portfolio and business websites using HTML & CSS
+                with a premium black–gold theme.
+            </p>
+        </div>
+
+        <div class="project-card">
+            <h4>Portfolio Website for Students & Freelancers</h4>
+            <p>
+                Personal portfolios to showcase skills, projects, achievements,
+                and contact details professionally.
+            </p>
+        </div>
+
+        <div class="project-card">
+            <h4>Website Hosting & Deployment</h4>
+            <p>
+                Deploying websites using GitHub Pages with live setup
+                and basic maintenance guidance.
+            </p>
+        </div>
+
+        <div class="project-card">
+            <h4>Website Updates & Maintenance</h4>
+            <p>
+                Content updates, image changes, new section additions,
+                and minor design improvements.
+            </p>
+        </div>
+
+    </div>
+</section>
+
 <!-- ========== CONTACT ========== -->
 <section id="contact" class="section contact">
     <h3 class="section-title">📞 Contact</h3>
@@ -211,7 +256,29 @@
             github.com/deepgit-hub
         </a>
     </p>
+    
+<a 
+  href="https://wa.me/919345738927?text=Hi%20Deepak,%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20website%20project."
+  class="floating-whatsapp hidden"
+  target="_blank"
+  aria-label="Chat on WhatsApp">
+    WA
+</a>
+
+
 </section>
 </footer>
+<script>
+    const whatsappBtn = document.querySelector('.floating-whatsapp');
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            whatsappBtn.classList.remove('hidden');
+        } else {
+            whatsappBtn.classList.add('hidden');
+        }
+    });
+</script>
+
 </body>
 </html>
