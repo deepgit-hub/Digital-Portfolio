@@ -411,3 +411,10 @@ html {
         height: 180px;
     }
 }
+/* ===== FIX: Clear images on mobile ===== */
+@media (max-width: 768px) {
+    .gallery-grid img {
+        filter: none;
+    }
+}
+
