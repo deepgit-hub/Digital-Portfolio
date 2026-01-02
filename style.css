@@ -1,4 +1,4 @@
-o* {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -35,7 +35,6 @@ body {
     gap: 15px;
 }
 
-
 /* BUTTONS */
 .btn {
     padding: 10px 16px;
@@ -43,6 +42,10 @@ body {
     text-decoration: none;
     font-weight: 500;
     display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.25s ease,
+                color 0.25s ease,
+                transform 0.25s ease;
 }
 
 .primary {
@@ -55,19 +58,29 @@ body {
     color: goldenrod;
 }
 
+/* BUTTON HOVER */
+.primary:hover {
+    background-color: gold;
+    color: black;
+    transform: translateY(-2px);
+}
+
+.secondary:hover {
+    background-color: goldenrod;
+    color: black;
+    transform: translateY(-2px);
+}
+
 /* ========== STICKY NAVBAR ========== */
 .navbar {
     position: sticky;
     top: 0;
     z-index: 1000;
-
     display: flex;
     justify-content: center;
     gap: 25px;
-
     padding: 15px;
     background-color: black;
-
     border-top: 1px solid #333;
     border-bottom: 1px solid #333;
 }
@@ -75,6 +88,27 @@ body {
 .navbar a {
     color: goldenrod;
     text-decoration: none;
+    position: relative;
+    transition: color 0.25s ease;
+}
+
+.navbar a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0%;
+    height: 2px;
+    background-color: gold;
+    transition: width 0.25s ease;
+}
+
+.navbar a:hover {
+    color: gold;
+}
+
+.navbar a:hover::after {
+    width: 100%;
 }
 
 /* SECTIONS */
@@ -90,6 +124,7 @@ body {
     border-radius: 10px;
     display: inline-block;
     margin-bottom: 20px;
+    letter-spacing: 0.5px;
 }
 
 /* SKILLS */
@@ -110,8 +145,20 @@ body {
     border-radius: 15px;
 }
 
-.project-card a {
+.project-card .btn {
+    display: inline-block;
     margin-top: 10px;
+}
+
+#services .project-card {
+    border: 1px solid rgba(218, 165, 32, 0.25);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+#services .project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(218, 165, 32, 0.35);
+    border-color: gold;
 }
 
 /* GALLERY */
@@ -126,17 +173,35 @@ body {
     height: 220px;
     object-fit: cover;
     border-radius: 12px;
-
-    /* premium filter */
-    filter: grayscale(20%) contrast(1.1) brightness(0.95) sepia(35%) hue-rotate(10deg);
-    transition: filter 0.3s ease, transform 0.25s ease;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-/* remove filter on hover */
-.gallery-item:hover img {
-    filter: none;
+.gallery-item {
+    background: #111;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
+.gallery-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(218, 165, 32, 0.25);
+}
+
+.gallery-item p {
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.gallery-grid:hover .gallery-item {
+    opacity: 0.5;
+}
+
+.gallery-grid .gallery-item:hover {
+    opacity: 1;
+}
 
 /* YOUTUBE */
 .video-grid {
@@ -151,11 +216,109 @@ body {
     border-radius: 12px;
 }
 
+.video-item {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.video-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(218, 165, 32, 0.25);
+}
+
+.video-item p {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+}
+
 /* FOOTER */
 .footer {
     text-align: center;
     padding: 20px;
     border-top: 1px solid #333;
+}
+
+/* CONTACT */
+.contact p {
+    margin-bottom: 12px;
+    opacity: 0.85;
+}
+
+/* ACHIEVEMENTS */
+.achievements-list {
+    padding-left: 20px;
+}
+
+.achievements-list li {
+    margin-bottom: 15px;
+    line-height: 1.7;
+    font-size: 16px;
+}
+
+/* ABOUT WIDTH FIX */
+#about.p {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* WHATSAPP BUTTON */
+.whatsapp-btn-wrapper {
+    margin-top: 25px;
+    text-align: center;
+}
+
+.whatsapp-btn {
+    display: inline-block;
+    padding: 14px 22px;
+    border-radius: 30px;
+    background-color: #25D366;
+    color: black;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.whatsapp-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.5);
+}
+
+/* FLOATING WHATSAPP */
+.floating-whatsapp {
+    position: fixed;
+    bottom: 22px;
+    right: 22px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: black;
+    color: goldenrod;
+    border: 2px solid goldenrod;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-decoration: none;
+    box-shadow: 0 8px 20px rgba(218, 165, 32, 0.25);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+    z-index: 2000;
+}
+
+.floating-whatsapp:hover {
+    background-color: goldenrod;
+    color: black;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(218, 165, 32, 0.45);
+}
+
+.floating-whatsapp.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(10px);
 }
 
 /* RESPONSIVE */
@@ -168,253 +331,29 @@ body {
     .hero-buttons {
         justify-content: center;
     }
-}
-/* ========== BUTTON HOVER (GLOBAL FIX) ========== */
-.btn {
-    transition: background-color 0.25s ease,
-                color 0.25s ease,
-                transform 0.25s ease;
-}
 
-/* Primary button hover */
-.primary:hover {
-    background-color: gold;
-    color: black;
-    transform: translateY(-2px);
-}
-
-/* Secondary button hover (View Code) */
-.secondary:hover {
-    background-color: goldenrod;
-    color: black;
-    transform: translateY(-2px);
-}
-
-/* Prevent overlap inside project cards */
-.project-card .btn {
-    display: inline-block;
-    margin-top: 10px;
-}
-.btn {
-    cursor: pointer;
-}
-/* Gallery captions */
-.gallery-item {
-    background: #111;
-    border-radius: 12px;
-    overflow: hidden;
-}
-
-.gallery-item p {
-    text-align: center;
-    padding: 10px;
-    font-size: 14px;
-}
-/* YouTube captions */
-.video-item p {
-    margin-top: 10px;
-    text-align: center;
-    font-size: 14px;
-}
-/* ========== IMAGE GALLERY HOVER ========== */
-.gallery-item {
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.gallery-item:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 10px 25px rgba(218, 165, 32, 0.25); /* golden glow */
-}
-
-/* ========== YOUTUBE VIDEO HOVER ========== */
-.video-item {
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.video-item:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 10px 25px rgba(218, 165, 32, 0.25);
-}
-/* Make gallery image captions bold */
-.gallery-item p {
-    font-weight: 600;
-}
-
-/* Make YouTube video captions bold */
-.video-item p {
-    font-weight: 600;
-}
-/* ========== NAVBAR LINK HOVER EFFECT ========== */
-.navbar a {
-    position: relative;
-    transition: color 0.25s ease;
-}
-
-/* underline effect */
-.navbar a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -6px;
-    width: 0%;
-    height: 2px;
-    background-color: gold;
-    transition: width 0.25s ease;
-}
-
-/* hover state */
-.navbar a:hover {
-    color: gold;
-}
-
-.navbar a:hover::after {
-    width: 100%;
-}
-/* ========== SMOOTH SCROLL ========== */
-html {
-    scroll-behavior: smooth;
-}
-/* ========== ACHIEVEMENTS ========== */
-.achievements-list {
-    padding-left: 20px;
-}
-
-.achievements-list li {
-    margin-bottom: 15px;
-    line-height: 1.7;
-    font-size: 16px;
-}
-/* ========== ABOUT ME WIDTH FIX ========== */
-#about.p {
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-}
-/* ========== SERVICES CARD TWEAK ========== */
-#services .project-card {
-    border: 1px solid rgba(218, 165, 32, 0.25);
-}
-/* ========== SERVICES HOVER EFFECT ========== */
-#services .project-card {
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-#services .project-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 30px rgba(218, 165, 32, 0.35);
-}
-/* ========== WHATSAPP BUTTON ========== */
-.whatsapp-btn-wrapper {
-    margin-top: 25px;
-    text-align: center;
-}
-
-.whatsapp-btn {
-    display: inline-block;
-    padding: 14px 22px;
-    border-radius: 30px;
-    background-color: #25D366; /* WhatsApp green */
-    color: black;
-    font-weight: 600;
-    text-decoration: none;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.whatsapp-btn:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.5);
-}
-/* ========== FLOATING WHATSAPP BUTTON ========== */
-/* ========== PREMIUM FLOATING WHATSAPP ========== */
-.floating-whatsapp {
-    position: fixed;
-    bottom: 22px;
-    right: 22px;
-
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-
-    background-color: black;
-    color: goldenrod;
-
-    border: 2px solid goldenrod;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font-size: 14px;
-    font-weight: 600;
-    letter-spacing: 1px;
-
-    text-decoration: none;
-
-    box-shadow: 0 8px 20px rgba(218, 165, 32, 0.25);
-    transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
-    z-index: 2000;
-}
-
-.floating-whatsapp:hover {
-    background-color: goldenrod;
-    color: black;
-    transform: translateY(-4px);
-    box-shadow: 0 12px 30px rgba(218, 165, 32, 0.45);
-}
-/* ========== FLOATING WHATSAPP VISIBILITY ========== */
-.floating-whatsapp.hidden {
-    opacity: 0;
-    pointer-events: none;
-    transform: translateY(10px);
-}
-
-.floating-whatsapp {
-    opacity: 1;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
-.gallery-grid:hover .gallery-item {
-    opacity: 0.5;
-}
-
-.gallery-grid .gallery-item:hover {
-    opacity: 1;
-}
-#services .project-card:hover {
-    border-color: gold;
-}
-.contact p {
-    margin-bottom: 12px;
-    opacity: 0.85;
-}
-.section-title {
-    letter-spacing: 0.5px;
-}
-@media (max-width: 768px) {
     .navbar {
         flex-wrap: wrap;
         gap: 15px;
     }
-}
-@media (max-width: 768px) {
+
     .profile-img {
         width: 170px;
         height: 170px;
     }
-}
-@media (max-width: 768px) {
+
     .section {
         margin: 40px auto;
     }
 }
+
 @media (max-width: 480px) {
     .gallery-grid img {
         height: 180px;
     }
 }
-/* ===== FIX: Clear images on mobile ===== */
-@media (max-width: 768px) {
-    .gallery-grid img {
-        filter: none;
-    }
-}
 
+/* SMOOTH SCROLL */
+html {
+    scroll-behavior: smooth;
+}
