@@ -236,10 +236,12 @@
 <div id="lightbox">
     <span id="lightbox-close">×</span>
     <img id="lightbox-img" src="" alt="Preview">
+    <p id="lightbox-caption"></p>
 </div>
     
 
 <!-- ========== CONTACT ========== -->
+<footer>
 <section id="contact" class="section contact">
     <h3 class="section-title">📞 Contact</h3>
 
@@ -295,16 +297,22 @@ document.addEventListener("DOMContentLoaded", () => {
     const lightbox = document.getElementById("lightbox");
     const lightboxImg = document.getElementById("lightbox-img");
     const closeBtn = document.getElementById("lightbox-close");
+    const caption = document.getElementById("lightbox-caption");
+
 
     if (images.length && lightbox && lightboxImg && closeBtn) {
 
-        images.forEach(img => {
-            img.addEventListener("click", () => {
-                lightboxImg.src = img.src;
-                lightbox.classList.add("active");
-                document.body.style.overflow = "hidden";
-            });
-        });
+       images.forEach(img => {
+    img.addEventListener("click", () => {
+        lightboxImg.src = img.src;
+
+        // get caption text from <p> below image
+        caption.textContent = img.nextElementSibling?.innerText || "";
+
+        lightbox.classList.add("active");
+        document.body.style.overflow = "hidden";
+    });
+});
 
         closeBtn.addEventListener("click", () => {
             lightbox.classList.remove("active");
@@ -320,6 +328,56 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 });
+        document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && lightbox.classList.contains("active")) {
+        lightbox.classList.remove("active");
+        document.body.style.overflow = "";
+    }
+});
+let startX = 0;
+let currentIndex = 0;
+
+// track index
+images.forEach((img, index) => {
+    img.addEventListener("click", () => {
+        currentIndex = index;
+    });
+});
+
+lightbox.addEventListener("touchstart", (e) => {
+    startX = e.touches[0].clientX;
+});
+
+lightbox.addEventListener("touchend", (e) => {
+    const endX = e.changedTouches[0].clientX;
+    const diff = startX - endX;
+
+    if (Math.abs(diff) > 50) {
+        if (diff > 0) {
+            currentIndex = (currentIndex + 1) % images.length;
+        } else {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+        }
+
+        lightboxImg.src = images[currentIndex].src;
+        caption.textContent = images[currentIndex].nextElementSibling?.innerText || "";
+    }
+});
+document.addEventListener("keydown", (e) => {
+    if (!lightbox.classList.contains("active")) return;
+
+    if (e.key === "ArrowRight") {
+        currentIndex = (currentIndex + 1) % images.length;
+    }
+
+    if (e.key === "ArrowLeft") {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+    }
+
+    lightboxImg.src = images[currentIndex].src;
+    caption.textContent = images[currentIndex].nextElementSibling?.innerText || "";
+});
+
 </script>
 
 </body>
