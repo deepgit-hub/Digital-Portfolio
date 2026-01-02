@@ -357,3 +357,34 @@ body {
 html {
     scroll-behavior: smooth;
 }
+/* ========== IMAGE LIGHTBOX (FULLSCREEN) ========== */
+#lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.92);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 5000;
+}
+
+#lightbox.active {
+    display: flex;
+}
+
+#lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 12px;
+}
+
+#lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 34px;
+    color: goldenrod;
+    cursor: pointer;
+    user-select: none;
+}
+
