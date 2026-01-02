@@ -232,6 +232,12 @@
 
     </div>
 </section>
+<!-- ===== IMAGE LIGHTBOX ===== -->
+<div id="lightbox">
+    <span id="lightbox-close">×</span>
+    <img id="lightbox-img" src="" alt="Preview">
+</div>
+    
 
 <!-- ========== CONTACT ========== -->
 <section id="contact" class="section contact">
@@ -268,16 +274,52 @@
 
 </section>
 </footer>
-<script>
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    /* ========== FLOATING WHATSAPP BUTTON ========== */
     const whatsappBtn = document.querySelector('.floating-whatsapp');
 
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 300) {
-            whatsappBtn.classList.remove('hidden');
-        } else {
-            whatsappBtn.classList.add('hidden');
-        }
-    });
+    if (whatsappBtn) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                whatsappBtn.classList.remove('hidden');
+            } else {
+                whatsappBtn.classList.add('hidden');
+            }
+        });
+    }
+
+    /* ========== IMAGE GALLERY LIGHTBOX ========== */
+    const images = document.querySelectorAll(".gallery-grid img");
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const closeBtn = document.getElementById("lightbox-close");
+
+    if (images.length && lightbox && lightboxImg && closeBtn) {
+
+        images.forEach(img => {
+            img.addEventListener("click", () => {
+                lightboxImg.src = img.src;
+                lightbox.classList.add("active");
+                document.body.style.overflow = "hidden";
+            });
+        });
+
+        closeBtn.addEventListener("click", () => {
+            lightbox.classList.remove("active");
+            document.body.style.overflow = "";
+        });
+
+        lightbox.addEventListener("click", (e) => {
+            if (e.target === lightbox) {
+                lightbox.classList.remove("active");
+                document.body.style.overflow = "";
+            }
+        });
+    }
+
+});
 </script>
 
 </body>
