@@ -357,7 +357,7 @@ body {
 html {
     scroll-behavior: smooth;
 }
-/* ========== IMAGE LIGHTBOX (FULLSCREEN) ========== */
+/* ========== LIGHTBOX FULLSCREEN FIX ========== */
 #lightbox {
     position: fixed;
     inset: 0;
@@ -365,6 +365,7 @@ html {
     display: none;
     align-items: center;
     justify-content: center;
+    flex-direction: column;   /* IMPORTANT */
     z-index: 5000;
 }
 
@@ -372,12 +373,24 @@ html {
     display: flex;
 }
 
-#lightbox img {
+/* Image styling */
+#lightbox-img {
     max-width: 90%;
-    max-height: 90%;
-    border-radius: 12px;
+    max-height: 75vh;
+    border-radius: 14px;
 }
 
+/* Caption BELOW image - centered */
+#lightbox-caption {
+    margin-top: 18px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+    color: goldenrod;
+    letter-spacing: 0.4px;
+}
+
+/* Close button */
 #lightbox-close {
     position: absolute;
     top: 20px;
@@ -387,4 +400,3 @@ html {
     cursor: pointer;
     user-select: none;
 }
-
