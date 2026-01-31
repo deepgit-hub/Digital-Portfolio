@@ -9,6 +9,12 @@ h1, h2, h3, h4 {
     letter-spacing: 1px;
     text-transform: uppercase; 
 }
+p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
 /* HERO */
 .hero {
     display: flex;
@@ -398,5 +404,6 @@ html {
     cursor: pointer;
     user-select: none;
 }
+
 
 
