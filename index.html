@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Deepak L | Portfolio</title>
-    <link rel="icon" href="Deepak Teacher's Day.jpg">
+    <link rel="icon" href="Images/Deepak_Teachers_Day.jpg">
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Orbitron Font -->
@@ -19,7 +19,7 @@
 
 <!-- ========== HERO ========== -->
 <header class="hero">
-    <img src="Deepak_pro.jpg" alt="Deepak L" class="profile-img">
+    <img src="Images/Deepak_pro.jpg" alt="Deepak L" class="profile-img">
     <div class="hero-text">
         <h1>Deepak L</h1>
         <h2>Computer Science Student</h2>
@@ -139,20 +139,20 @@
     <div class="project-grid">
 
         <div class="project-card">
-            <img src="elon_musk.jpeg" alt="Elon Musk Book" style="width:100%; border-radius:12px;">
+            <img src="Images/elon_musk.jpeg" alt="Elon Musk Book" style="width:100%; border-radius:12px;">
             <h4>Elon Musk</h4>
             <p>Learned resilience, long-term thinking, and the importance of enduring repeated failures
         without being driven only by money, but by purpose and impact.</p>
         </div>
 
         <div class="project-card">
-            <img src="how_to_win_friends.jpeg" alt="How to Win Friends and Influence People" style="width:100%; border-radius:12px;">
+            <img src="Images/how_to_win_friends.jpeg" alt="How to Win Friends and Influence People" style="width:100%; border-radius:12px;">
             <h4>How to Win Friends & Influence People</h4>
             <p>Improved my communication skills, confidence, and ability to connect with people.</p>
         </div>
 
         <div class="project-card">
-            <img src="deep_work.jpeg" alt="Deep Work Book" style="width:100%; border-radius:12px;">
+            <img src="Images/deep_work.jpeg" alt="Deep Work Book" style="width:100%; border-radius:12px;">
             <h4>Deep Work</h4>
             <p>Helped me build focus, discipline, and consistency while learning programming.</p>
         </div>
@@ -167,67 +167,67 @@
     <div class="gallery-grid">
 
         <div class="gallery-item">
-            <img src="Deepak.jpg">
+            <img src="Images/Deepak.jpg">
             <p><b>Cybersecurity Presentation Session</b></p>
         </div>
 
         <div class="gallery-item">
-            <img src="Deepak Book.jpg">
+            <img src="Images/Deepak_Book.jpg">
             <p><b>1st Prize – Book Review Competition</b></p>
         </div>
 
         <div class="gallery-item">
-            <img src="MGR.jpg">
+            <img src="Images/MGR.jpg">
             <p><b>Runner up inPaper Presentation – MGR College</b></p>
         </div>
 
         <div class="gallery-item">
-            <img src="Deepak Teacher's Day.jpg">
+            <img src="Images/Deepak_Teachers_Day.jpg">
             <p><b>Teacher’s Day Speech</b></p>
         </div>
 
         <div class="gallery-item">
-            <img src="Deepak Freshers Day.jpg">
+            <img src="Images/Deepak_Freshers_Day.jpg">
             <p><b>Gave an Inspirational Fresher’s Day Speech</b></p>
         </div>
 
         <div class="gallery-item">
-            <img src="Gandhi.jpg">
+            <img src="Images/Gandhi.jpg">
             <p><b>Gandhi Peace Club – School Session</b></p>
         </div>
 
         <div class="gallery-item">
-            <img src="Deepak_SacredHeart.jpg">
+            <img src="Images/Deepak_SacredHeart.jpg">
             <p><b>Inter-College Events – Sacred Heart</b></p>
         </div>
         <div class="gallery-item">
-            <img src="Deepak Dual Boot.png" alt="Presentation  Image">
+            <img src="Images/Deepak_Dual_Boot.png" alt="Presentation  Image">
              <p><b>Dual Boot Presentation</b></p>
         </div>
         <div class="gallery-item">
-         <img src="Deepak_Elocution.jpg">
+         <img src="Images/Deepak_Elocution.jpg">
            <p><b>Third Prize – Elocution Competition</b></p>
 </div>
 
 <div class="gallery-item">
-    <img src="Deepak_Skit.jpg">
+    <img src="Images/Deepak_Skit.jpg">
           <p><b>Participated in College Skit</b></p>
 </div>
 
 <div class="gallery-item">
-    <img src="Deepak_Book_Cover.jpg">
+    <img src="Images/Deepak_Book_Cover.jpg">
           <p><b>Book Cover Design Competition</b></p>
 </div>
 <div class="gallery-item">
-    <img src="Sacred_Presentation.jpg">
+    <img src="Images/Sacred_Presentation.jpg">
           <p><b>Presentation in Sacred Heart College</b></p>
 </div>
 <div class="gallery-item">
-    <img src="Islamiah_Presentation.jpg">
+    <img src="Images/Islamiah_Presentation.jpg">
           <p><b>CyberSecurity Presentation in Islamiah College</b></p>
 </div>
 <div class="gallery-item">
-    <img src="Islamiah_Prize.jpg">
+    <img src="Images/Islamiah_Prize.jpg">
           <p><b>Third Price in Quiz in Islamiah College</b></p>
 </div>
 
@@ -365,7 +365,7 @@
 
 </section>
 </footer>
-    <script>
+   <script>
 document.addEventListener("DOMContentLoaded", () => {
 
     /* ========== FLOATING WHATSAPP BUTTON ========== */
@@ -388,85 +388,75 @@ document.addEventListener("DOMContentLoaded", () => {
     const closeBtn = document.getElementById("lightbox-close");
     const caption = document.getElementById("lightbox-caption");
 
+    let currentIndex = 0;
+    let startX = 0;
 
-    if (images.length && lightbox && lightboxImg && closeBtn) {
-
-       images.forEach(img => {
-    img.addEventListener("click", () => {
-        lightboxImg.src = img.src;
-
-        // get caption text from <p> below image
-        caption.textContent = img.nextElementSibling?.innerText || "";
-
-        lightbox.classList.add("active");
-        document.body.style.overflow = "hidden";
+    images.forEach((img, index) => {
+        img.addEventListener("click", () => {
+            currentIndex = index;
+            lightboxImg.src = img.src;
+            caption.textContent = img.nextElementSibling?.innerText || "";
+            lightbox.classList.add("active");
+            document.body.style.overflow = "hidden";
+        });
     });
-});
 
-        closeBtn.addEventListener("click", () => {
-            lightbox.classList.remove("active");
-            document.body.style.overflow = "";
-        });
-
-        lightbox.addEventListener("click", (e) => {
-            if (e.target === lightbox) {
-                lightbox.classList.remove("active");
-                document.body.style.overflow = "";
-            }
-        });
-    }
-
-});
-        document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && lightbox.classList.contains("active")) {
+    closeBtn.addEventListener("click", () => {
         lightbox.classList.remove("active");
         document.body.style.overflow = "";
-    }
-});
-let startX = 0;
-let currentIndex = 0;
-
-// track index
-images.forEach((img, index) => {
-    img.addEventListener("click", () => {
-        currentIndex = index;
     });
-});
 
-lightbox.addEventListener("touchstart", (e) => {
-    startX = e.touches[0].clientX;
-});
+    lightbox.addEventListener("click", (e) => {
+        if (e.target === lightbox) {
+            lightbox.classList.remove("active");
+            document.body.style.overflow = "";
+        }
+    });
 
-lightbox.addEventListener("touchend", (e) => {
-    const endX = e.changedTouches[0].clientX;
-    const diff = startX - endX;
+    document.addEventListener("keydown", (e) => {
+        if (!lightbox.classList.contains("active")) return;
 
-    if (Math.abs(diff) > 50) {
-        if (diff > 0) {
+        if (e.key === "Escape") {
+            lightbox.classList.remove("active");
+            document.body.style.overflow = "";
+        }
+
+        if (e.key === "ArrowRight") {
             currentIndex = (currentIndex + 1) % images.length;
-        } else {
+        }
+
+        if (e.key === "ArrowLeft") {
             currentIndex = (currentIndex - 1 + images.length) % images.length;
         }
 
         lightboxImg.src = images[currentIndex].src;
-        caption.textContent = images[currentIndex].nextElementSibling?.innerText || "";
-    }
+        caption.textContent =
+            images[currentIndex].nextElementSibling?.innerText || "";
+    });
+
+    // Swipe Support for Mobile
+    lightbox.addEventListener("touchstart", (e) => {
+        startX = e.touches[0].clientX;
+    });
+
+    lightbox.addEventListener("touchend", (e) => {
+        const endX = e.changedTouches[0].clientX;
+        const diff = startX - endX;
+
+        if (Math.abs(diff) > 50) {
+            if (diff > 0) {
+                currentIndex = (currentIndex + 1) % images.length;
+            } else {
+                currentIndex = (currentIndex - 1 + images.length) % images.length;
+            }
+
+            lightboxImg.src = images[currentIndex].src;
+            caption.textContent =
+                images[currentIndex].nextElementSibling?.innerText || "";
+        }
+    });
+
 });
-document.addEventListener("keydown", (e) => {
-    if (!lightbox.classList.contains("active")) return;
-
-    if (e.key === "ArrowRight") {
-        currentIndex = (currentIndex + 1) % images.length;
-    }
-
-    if (e.key === "ArrowLeft") {
-        currentIndex = (currentIndex - 1 + images.length) % images.length;
-    }
-
-    lightboxImg.src = images[currentIndex].src;
-    caption.textContent = images[currentIndex].nextElementSibling?.innerText || "";
-});
-
 </script>
 
 </body>
