@@ -139,13 +139,13 @@ p {
 /* PROJECTS */
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 18px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
 }
 
 .project-card {
     background: #111;
-    padding: 14px;
+    padding: 20px;
     border-radius: 15px;
 }
 
@@ -153,18 +153,6 @@ p {
     display: inline-block;
     margin-top: 10px;
 }
-.project-card img {
-    width: 120px;
-    height: 160px;
-    object-fit: cover;
-    display: block;
-    margin: 0 auto 10px;
-    border-radius: 10px;
-}
-.project-card h4 {
-    text-align: center;
-}
-
 
 #services .project-card {
     border: 1px solid rgba(218, 165, 32, 0.25);
@@ -416,6 +404,7 @@ html {
     cursor: pointer;
     user-select: none;
 }
+
 
 
 
