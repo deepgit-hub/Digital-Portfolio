@@ -51,7 +51,7 @@ This portfolio reflects my journey as a **B.Sc. Computer Science student**, my f
 
 ## 🖥️ Java Projects Included
 
-- Employee Salary & Attendance System  
+- 
 - Student Performance & Discipline Management System  
 - Student Eligibility System  
 - Secure Login Validation System  
