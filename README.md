@@ -56,7 +56,7 @@ This portfolio reflects my journey as a **B.Sc. Computer Science student**, my f
 - Traffic Rule & Fine Logic System  
 - College Library Fine System  
 
-Each project focuses on **real-world logic building**, conditions, loops, arrays, and structured programming.
+Each project focuses on **real-world logic building**, conditions, loops, arrays, classes,functions and structured programming.
 
 ---
 
