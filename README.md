@@ -51,10 +51,8 @@ This portfolio reflects my journey as a **B.Sc. Computer Science student**, my f
 
 ## 🖥️ Java Projects Included
 
-- 
+- College Admission Simulation
 - Student Performance & Discipline Management System  
-- Student Eligibility System  
-- Secure Login Validation System  
 - Traffic Rule & Fine Logic System  
 - College Library Fine System  
 
