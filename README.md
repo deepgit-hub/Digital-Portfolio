@@ -99,7 +99,7 @@ Each project focuses on **real-world logic building**, conditions, loops, arrays
 - Add dark/light mode toggle
 - Integrate contact form with backend
 - Add project filters & animations
-- Convert portfolio into React version
+
 
 ---
 
