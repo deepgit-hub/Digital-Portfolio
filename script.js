@@ -1,4 +1,4 @@
-<script>
+
 document.addEventListener("DOMContentLoaded", () => {
 
     /* ========== FLOATING WHATSAPP BUTTON ========== */
@@ -90,4 +90,3 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
-</script>
