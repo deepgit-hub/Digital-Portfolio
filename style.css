@@ -121,7 +121,7 @@ p {
 }
 
 /* ========== STICKY NAVBAR ========== */
-/* ========== STICKY NAVBAR ========== */
+
 .navbar {
     position: sticky;
     top: 0;
@@ -191,27 +191,102 @@ p {
     }
 }
 
-/* SECTIONS */
+/* ========== SECTIONS & TITLES ========== */
 .section {
-    max-width: 1100px;
-    margin: 60px auto;
-    padding: 0 20px;
+    max-width: 1000px;
+    margin: 80px auto;
+    padding: 0 24px;
 }
 
 .section-title {
+    font-family: 'Orbitron', sans-serif;
+    color: #fff;
+    font-size: 1.6rem;
     background: #111;
-    padding: 10px 15px;
-    border-radius: 10px;
-    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 30px;
+    border-left: 3px solid goldenrod;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.title-icon {
+    font-size: 1.3rem;
+}
+
+/* ========== ABOUT CONTENT ========== */
+.about-content p {
     margin-bottom: 20px;
-    letter-spacing: 0.5px;
+    color: rgba(218, 165, 32, 0.85); /* Clean, legible gold-tinted text */
 }
 
-/* SKILLS */
-.skills-list li {
-    margin-bottom: 10px;
+.learning-status {
+    background: rgba(218, 165, 32, 0.05);
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px dashed rgba(218, 165, 32, 0.3);
+    display: inline-block;
+    margin-top: 10px;
 }
 
+.learning-status code {
+    background: #222;
+    color: gold;
+    padding: 4px 8px;
+    border-radius: 4px;
+    margin-left: 5px;
+    font-family: monospace;
+}
+
+/* ========== SKILLS BADGES ========== */
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.skills-category {
+    background: #111;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid rgba(218, 165, 32, 0.1);
+}
+
+.skills-category h4 {
+    color: #fff;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(218, 165, 32, 0.2);
+    padding-bottom: 5px;
+}
+
+.badge-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill-badge {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: gold;
+    background: rgba(218, 165, 32, 0.1);
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: 1px solid rgba(218, 165, 32, 0.25);
+    transition: all 0.25s ease;
+}
+
+.skill-badge:hover {
+    background: goldenrod;
+    color: black;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(218, 165, 32, 0.3);
+}
 /* PROJECTS */
 .project-grid {
     display: grid;
