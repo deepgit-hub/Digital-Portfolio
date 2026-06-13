@@ -8,7 +8,7 @@ This portfolio reflects my journey as a **B.Sc. Computer Science student**, my f
 ## 🚀 Live Demo
 🔗 **Portfolio Website:**  
 [Visit Live Portfolio](https://deepgit-hub.github.io/Digital-Portfolio/) 
-
+---
 
 ## 🌟 Features
 
@@ -83,11 +83,6 @@ Each project focuses on **real-world logic building**, conditions, loops, arrays
 ---
 
 
-
-
-[Visit Live Portfolio](https://deepgit-hub.github.io/Digital-Portfolio/) 
-
----
 
 ## 📬 Contact
 
