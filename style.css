@@ -121,21 +121,28 @@ p {
 }
 
 /* ========== STICKY NAVBAR ========== */
+/* ========== STICKY NAVBAR ========== */
 .navbar {
     position: sticky;
     top: 0;
+    left: 0;
+    width: 100%;
     z-index: 1000;
     display: flex;
     justify-content: center;
     gap: 20px;
     padding: 15px 20px;
-    /* Glassmorphism Effect: transparent black background with a blur */
-    background-color: rgba(0, 0, 0, 0.75);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(218, 165, 32, 0.2);
+    
+    /* Slightly lighter translucent gray tint so you can see the glass look instantly */
+    background-color: rgba(20, 20, 20, 0.65); 
+    
+    /* Hardware-accelerated blur effects */
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+    
+    border-bottom: 1px solid rgba(218, 165, 32, 0.25);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
 }
-
 .navbar a {
     color: #d4af37;
     text-decoration: none;
