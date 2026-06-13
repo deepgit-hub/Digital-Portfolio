@@ -287,35 +287,90 @@ p {
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(218, 165, 32, 0.3);
 }
-/* PROJECTS */
+
+/* ========== PROJECTS GRID & CARDS ========== */
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 15px;
 }
 
 .project-card {
-    background: #111;
-    padding: 20px;
-    border-radius: 15px;
+    background: #0d0d0d;
+    padding: 25px;
+    border-radius: 16px;
+    border: 1px solid rgba(218, 165, 32, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Keeps the button cleanly locked at the bottom */
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), 
+                border-color 0.3s ease, 
+                box-shadow 0.3s ease;
 }
 
-.project-card .btn {
-    display: inline-block;
-    margin-top: 10px;
+/* Subtle corner neon accent lines on hover */
+.project-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 0;
+    background: linear-gradient(to bottom, gold, transparent);
+    transition: height 0.3s ease;
 }
 
-#services .project-card {
-    border: 1px solid rgba(218, 165, 32, 0.25);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+.project-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(218, 165, 32, 0.4);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), 0 0 20px rgba(218, 165, 32, 0.05);
 }
 
-#services .project-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 30px rgba(218, 165, 32, 0.35);
-    border-color: gold;
+.project-card:hover::before {
+    height: 100%;
 }
 
+.project-card h4 {
+    color: #ffffff;
+    font-size: 1.15rem;
+    margin-bottom: 12px;
+    line-height: 1.4;
+    transition: color 0.3s ease;
+}
+
+.project-card:hover h4 {
+    color: gold;
+}
+
+.project-card p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.card-footer {
+    margin-top: auto; /* Forces action buttons to line up perfectly even if text heights differ */
+}
+
+.project-card .btn.secondary {
+    width: 100%;
+    text-align: center;
+    background: rgba(218, 165, 32, 0.03);
+    border: 1px solid rgba(218, 165, 32, 0.3);
+    font-size: 14px;
+    padding: 10px 0;
+}
+
+.project-card .btn.secondary:hover {
+    background: goldenrod;
+    color: black;
+    border-color: goldenrod;
+    box-shadow: 0 0 15px rgba(218, 165, 32, 0.3);
+}
 /* GALLERY */
 .gallery-grid {
     display: grid;
