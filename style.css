@@ -56,8 +56,8 @@ p {
     border-radius: 50%;
     border: 3px solid goldenrod;
     object-fit: cover;
-    /* Adding a professional glow effect */
-    box-shadow: 0 0 25px rgba(218, 165, 32, 0.3);
+    /* Increased opacity (0.6) and added 5px spread for a stronger glow */
+    box-shadow: 0 0 25px 5px rgba(218, 165, 32, 0.6); 
     transition: transform 0.3s ease;
 }
 
