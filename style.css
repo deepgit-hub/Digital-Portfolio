@@ -405,10 +405,7 @@ p {
         justify-content: center;
     }
 
-    .navbar {
-        flex-wrap: wrap;
-        gap: 15px;
-    }
+    
 
     .profile-img {
         width: 170px;
