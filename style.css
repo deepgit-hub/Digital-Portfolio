@@ -608,7 +608,140 @@ html {
     user-select: none;
 }
 
+/* ========== ACHIEVEMENTS TIMELINE ========== */
+.achievements-timeline {
+    list-style: none;
+    position: relative;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
 
+/* Vertical timeline trace line */
+.achievements-timeline::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 5px;
+    bottom: 5px;
+    width: 2px;
+    background: rgba(218, 165, 32, 0.15);
+}
+
+.achievements-timeline li {
+    position: relative;
+    background: #0d0d0d;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid rgba(218, 165, 32, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.achievements-timeline li::before {
+    content: "";
+    position: absolute;
+    left: -24px;
+    top: 24px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: black;
+    border: 2px solid goldenrod;
+    box-shadow: 0 0 8px gold;
+    z-index: 2;
+}
+
+.achievements-timeline li:hover {
+    transform: translateX(5px);
+    border-color: rgba(218, 165, 32, 0.3);
+}
+
+.achieve-badge {
+    align-self: flex-start;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 4px;
+    letter-spacing: 0.5px;
+    background: rgba(218, 165, 32, 0.1);
+    color: gold;
+    border: 1px solid rgba(218, 165, 32, 0.2);
+}
+
+.achievements-timeline p {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* ========== PREMIUM BOOKS GRID ========== */
+.books-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.book-card {
+    background: #0d0d0d;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(218, 165, 32, 0.08);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.book-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
+    border-color: rgba(218, 165, 32, 0.25);
+}
+
+.book-img-container {
+    width: 100%;
+    height: 240px; /* Forces all book covers to clip uniformly */
+    background: #151515;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.book-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Keeps image proportions clean without stretching */
+    transition: transform 0.5s ease;
+}
+
+.book-card:hover .book-img-container img {
+    transform: scale(1.06);
+}
+
+.book-info {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.book-info h4 {
+    color: #fff;
+    font-size: 1.1rem;
+}
+
+.book-info p {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.6;
+}
 
 
 
