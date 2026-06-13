@@ -6,6 +6,9 @@ This portfolio reflects my journey as a **B.Sc. Computer Science student**, my f
 
 ---
 ## 🚀 Live Demo
+🔗 **Portfolio Website:**  
+[Visit Live Portfolio](https://deepgit-hub.github.io/Digital-Portfolio/) 
+
 
 ## 🌟 Features
 
