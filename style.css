@@ -127,18 +127,25 @@ p {
     z-index: 1000;
     display: flex;
     justify-content: center;
-    gap: 25px;
-    padding: 15px;
-    background-color: black;
-    border-top: 1px solid #333;
-    border-bottom: 1px solid #333;
+    gap: 20px;
+    padding: 15px 20px;
+    /* Glassmorphism Effect: transparent black background with a blur */
+    background-color: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(218, 165, 32, 0.2);
 }
 
 .navbar a {
-    color: goldenrod;
+    color: #d4af37;
     text-decoration: none;
+    font-family: 'Orbitron', sans-serif; /* Matching your tech headings */
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
     position: relative;
-    transition: color 0.25s ease;
+    transition: color 0.3s ease;
 }
 
 .navbar a::after {
@@ -149,7 +156,8 @@ p {
     width: 0%;
     height: 2px;
     background-color: gold;
-    transition: width 0.25s ease;
+    box-shadow: 0 0 8px gold; /* Adds a tiny glow to the underline */
+    transition: width 0.3s ease;
 }
 
 .navbar a:hover {
@@ -158,6 +166,22 @@ p {
 
 .navbar a:hover::after {
     width: 100%;
+}
+
+/* Mobile Responsiveness for Navbar */
+@media (max-width: 768px) {
+    .navbar {
+        gap: 12px;
+        padding: 12px 10px;
+        overflow-x: auto; /* Allows smooth horizontal scrolling on mobile */
+        justify-content: flex-start;
+        white-space: nowrap;
+        /* Hides scrollbar for clean look while keeping functionality */
+        scrollbar-width: none; 
+    }
+    .navbar::-webkit-scrollbar {
+        display: none;
+    }
 }
 
 /* SECTIONS */
