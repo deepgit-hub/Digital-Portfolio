@@ -920,3 +920,16 @@ html {
 }
 
 
+.contact-links {
+    position: relative !important;
+    z-index: 10; /* Forces the buttons to sit on top of any invisible background layers */
+    display: flex !important;
+    justify-content: center !important;
+    gap: 20px !important;
+    margin-top: 20px;
+}
+
+.contact-item {
+    cursor: pointer !important; /* Forces the browser to show the clicking hand icon */
+    pointer-events: auto !important; /* Re-enables clicking if it was accidentally disabled by another style */
+}
