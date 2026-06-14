@@ -814,6 +814,45 @@ html {
     gap: 25px;
     margin-top: 20px;
 }
+/* ========== DUAL BUTTON LAYOUT FOR JS CARDS ========== */
+.card-footer.dynamic-buttons {
+    display: flex !important;
+    gap: 12px !important;
+    width: 100%;
+}
+
+/* Adjusting buttons to share equal horizontal space */
+.card-footer.dynamic-buttons .btn {
+    flex: 1; 
+    text-align: center;
+    padding: 10px 0;
+    font-size: 13px;
+    font-weight: 500;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.25s ease;
+}
+
+/* Style for the new prominent Live Demo button */
+.btn.primary.demo-btn {
+    background: goldenrod !important;
+    color: #000000 !important;
+    border: 1px solid goldenrod !important;
+}
+
+.btn.primary.demo-btn:hover {
+    background: gold !important;
+    border-color: gold !important;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.4) !important;
+    transform: translateY(-1px);
+}
+
+/* Responsive adjustment so buttons stack cleanly on narrow mobile devices */
+@media (max-width: 360px) {
+    .card-footer.dynamic-buttons {
+        flex-direction: column !important;
+    }
+}
 
 .service-card {
     background: #0d0d0d;
