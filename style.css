@@ -371,7 +371,64 @@ p {
     border-color: goldenrod;
     box-shadow: 0 0 15px rgba(218, 165, 32, 0.3);
 }
-/*gallery*/
+/* ========== GALLERY SECTIONS ========== */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+.gallery-item {
+    background: #0d0d0d;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(218, 165, 32, 0.08);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), 
+                border-color 0.3s ease, 
+                box-shadow 0.3s ease;
+}
+
+.gallery-img-wrapper {
+    width: 100%;
+    height: 180px; /* Forces uniform crop heights across all portfolio assets */
+    overflow: hidden;
+    background: #111;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    border-color: rgba(218, 165, 32, 0.3);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+}
+
+/* Elegant zoom on hover without spilling outside boundaries */
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+.gallery-item p {
+    text-align: center;
+    padding: 12px 10px;
+    font-size: 13px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.4;
+    margin-top: auto; /* Keeps captions locked properly */
+}
+
+/* Removing the old full-grid fade effect to keep it accessible and readable */
+.gallery-grid:hover .gallery-item {
+    opacity: 1;
+}
 /* FOOTER */
 .footer {
     text-align: center;
