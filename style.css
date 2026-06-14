@@ -430,10 +430,12 @@ p {
     opacity: 1;
 }
 /* ========== YOUTUBE STYLING ========== */
+/* ========== YOUTUBE REFERENCES GRID ========== */
 .video-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 25px;
+    align-items: stretch; /* Forces all cards in a row to be the exact same height */
 }
 
 .video-item {
@@ -441,8 +443,11 @@ p {
     border-radius: 14px;
     overflow: hidden;
     border: 1px solid rgba(218, 165, 32, 0.08);
-    padding: 10px;
-    transition: transform 0.3s ease, border-color 0.3s ease;
+    padding: 15px; /* Balanced padding */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Pushes content and titles into perfect grids */
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .video-wrapper {
@@ -450,27 +455,33 @@ p {
     aspect-ratio: 16 / 9;
     border-radius: 8px;
     overflow: hidden;
+    background: #000;
 }
 
 .video-grid iframe {
     width: 100%;
     height: 100%;
     border: none;
+    display: block;
+}
+
+.video-item p {
+    margin-top: 15px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.85);
+    text-align: center;
+    min-height: 42px; /* Reserves space for exactly 2 lines of text so 1-line text doesn't shrink the card */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .video-item:hover {
     transform: translateY(-5px);
     border-color: rgba(218, 165, 32, 0.3);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
-}
-
-.video-item p {
-    margin-top: 12px;
-    padding: 0 5px 4px 5px;
-    text-align: center;
-    font-size: 14px;
-    font-weight: 500;
-    color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
 }
 /* FOOTER */
 .footer {
