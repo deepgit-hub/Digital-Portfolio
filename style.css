@@ -933,3 +933,9 @@ html {
     cursor: pointer !important; /* Forces the browser to show the clicking hand icon */
     pointer-events: auto !important; /* Re-enables clicking if it was accidentally disabled by another style */
 }
+.contact-item.whatsapp-btn:hover {
+    background: #25D366 !important; /* WhatsApp Green */
+    border-color: #25D366 !important;
+    color: #ffffff !important;
+    box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4) !important;
+}
