@@ -429,13 +429,15 @@ p {
 .gallery-grid:hover .gallery-item {
     opacity: 1;
 }
-/* ========== YOUTUBE STYLING ========== */
+
 /* ========== YOUTUBE REFERENCES GRID ========== */
+
 .video-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 25px;
-    align-items: stretch; /* Forces all cards in a row to be the exact same height */
+    /* Forces exactly two equal columns on desktop screens */
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 30px; /* Increased gap slightly to match the larger video size */
+    align-items: stretch;
 }
 
 .video-item {
@@ -443,10 +445,10 @@ p {
     border-radius: 14px;
     overflow: hidden;
     border: 1px solid rgba(218, 165, 32, 0.08);
-    padding: 15px; /* Balanced padding */
+    padding: 20px; /* Marginally more padding for larger cards */
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Pushes content and titles into perfect grids */
+    justify-content: space-between;
     transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -466,13 +468,12 @@ p {
 }
 
 .video-item p {
-    margin-top: 15px;
-    font-size: 14px;
+    margin-top: 18px;
+    font-size: 15px; /* Bumped text size up slightly to match the larger card scaling */
     font-weight: 500;
     line-height: 1.5;
-    color: rgba(255, 255, 255, 0.85);
+    color: rgba(255, 255, 255, 0.9);
     text-align: center;
-    min-height: 42px; /* Reserves space for exactly 2 lines of text so 1-line text doesn't shrink the card */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -481,7 +482,15 @@ p {
 .video-item:hover {
     transform: translateY(-5px);
     border-color: rgba(218, 165, 32, 0.3);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7);
+}
+
+/* Responsive fix: Stack into 1 column on mobile screens so they don't break */
+@media (max-width: 600px) {
+    .video-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
 }
 /* FOOTER */
 .footer {
