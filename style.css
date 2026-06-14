@@ -574,11 +574,26 @@ p {
 
     
 
-    .profile-img {
-        width: 170px;
-        height: 170px;
-    }
+.profile-img {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    border: 3px solid #d4af37; /* Crisp gold metallic border */
+    object-fit: cover;
+    
+    /* Remove any strange yellow tint filters */
+    filter: none !important; 
+    mix-blend-mode: normal !important;
+    
+    /* A clean, soft outer gold aura glow */
+    box-shadow: 0 0 20px 3px rgba(218, 165, 32, 0.4); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
+.profile-img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 25px 6px rgba(218, 165, 32, 0.65);
+}
     .section {
         margin: 40px auto;
     }
