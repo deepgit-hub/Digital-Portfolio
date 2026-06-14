@@ -429,6 +429,49 @@ p {
 .gallery-grid:hover .gallery-item {
     opacity: 1;
 }
+/* ========== YOUTUBE STYLING ========== */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.video-item {
+    background: #0d0d0d;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid rgba(218, 165, 32, 0.08);
+    padding: 10px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.video-wrapper {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.video-grid iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.video-item:hover {
+    transform: translateY(-5px);
+    border-color: rgba(218, 165, 32, 0.3);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+}
+
+.video-item p {
+    margin-top: 12px;
+    padding: 0 5px 4px 5px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.8);
+}
 /* FOOTER */
 .footer {
     text-align: center;
