@@ -49,7 +49,7 @@ This portfolio reflects my journey as a **B.Sc. Computer Science student**, my f
 - **DSA:** Arrays, Linked Lists
 - **Web:** HTML, CSS
 - **Tools:** Git, GitHub, VS Code
-- **Operating System:** Linux (Ubuntu)(ba
+- **Operating System:** Linux (Ubuntu)(basi
 
 ---
 
