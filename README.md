@@ -1,4 +1,4 @@
-# 💼 Depak L – Student Portfolio
+# 💼 Deepak L – Student Portfolio
 
 A modern, responsive **personal portfolio website** built to showcase my skills, Java mini projects, achievements, technical sessions, and services — all in one place with a premium black–gold theme.
 
