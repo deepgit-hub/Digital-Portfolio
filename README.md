@@ -1,4 +1,4 @@
-# 💼 Deepak Student Portfolio
+# 💼 Deepak Student Portfolio 
 
 A modern,responsive **personal portfolio website** built to showcase my skills, Java mini projects, achievements, technical sessions, and services — all in one place with a premium black–gold theme.
 This portfolio reflects my journey as a **B.Sc. Computer Science student**, my focus on **Java & problem-solving**, and my long-term goal of building a career in **Cybersecurity**.
