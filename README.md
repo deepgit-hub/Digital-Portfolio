@@ -19,7 +19,7 @@ This portfolio reflects my journey as a **B.Sc. Computer Science student**, my f
 - 🧑‍💻 Dedicated sections for:
   - About Me
   - Skills
-  - Java Projects
+  - Java Projects , javascript project 
   - Achievements
   - Image Gallery
   - YouTube Sessions
