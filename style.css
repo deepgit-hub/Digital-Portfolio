@@ -1,128 +1,299 @@
 
-    .instagram-wrapper {
-        width: min(100%, 360px);
-    }
+/* =========================================================
+   DEEPAK L — PERSONAL PORTFOLIO
+   Theme: Black + Goldenrod
+   Complete stylesheet
+   ========================================================= */
+
+/* ========== RESET & GLOBAL ========== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-@media (max-width: 480px) {
-    .hero {
-        padding: 42px 18px;
-    }
-
-    .profile-img {
-        width: 165px;
-        height: 165px;
-        flex-basis: 165px;
-    }
-
-    .hero-text h1 {
-        font-size: 2rem;
-    }
-
-    .hero-text h2 {
-        font-size: 1rem;
-    }
-
-    .hero-text p {
-        font-size: 14px;
-    }
-
-    .hero-buttons {
-        gap: 10px;
-    }
-
-    .btn {
-        padding: 10px 13px;
-        font-size: 13px;
-    }
-
-    .section {
-        width: min(100% - 30px, 1000px);
-        margin: 42px auto;
-    }
-
-    .section-title {
-        padding: 9px 14px;
-        font-size: 1.15rem;
-    }
-
-    .about-content p {
-        font-size: 14px;
-    }
-
-    .learning-status {
-        display: block;
-        line-height: 2;
-    }
-
-    .project-card {
-        padding: 20px;
-    }
-
-    .gallery-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .gallery-img-wrapper {
-        height: 200px;
-    }
-
-    .book-img-container {
-        height: 220px;
-    }
-
-    .contact-container {
-        padding: 28px 18px;
-    }
-
-    .contact-item {
-        width: 100%;
-        padding: 12px 16px;
-        font-size: 12px;
-    }
-
-    .floating-whatsapp {
-        right: 15px;
-        bottom: 15px;
-        width: 44px;
-        height: 44px;
-    }
-
-    #lightbox-close {
-        top: 12px;
-        right: 18px;
-    }
-
-    #lightbox-caption {
-        font-size: 15px;
-    }
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
 }
 
-@media (max-width: 360px) {
-    .card-footer.dynamic-buttons {
-        flex-direction: column;
-    }
-
-    .hero-buttons .btn {
-        width: 100%;
-    }
+body {
+    background: #000;
+    color: goldenrod;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
 }
 
-/* ========== ACCESSIBILITY & MOTION ========== */
-
-:focus-visible {
-    outline: 2px solid gold;
-    outline-offset: 4px;
+h1, h2, h3, h4 {
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
-@media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-        scroll-behavior: auto !important;
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-    }
+p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    line-height: 1.8;
 }
 
+img, iframe {
+    max-width: 100%;
+}
+
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* ========== HERO ========== */
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 24px;
+    text-align: left;
+    animation: fadeIn 1.2s ease-out;
+}
+
+.profile-img {
+    width: 220px;
+    height: 220px;
+    flex: 0 0 220px;
+    border: 3px solid #d4af37;
+    border-radius: 50%;
+    object-fit: cover;
+    filter: none;
+    mix-blend-mode: normal;
+    box-shadow: 0 0 25px 5px rgba(218, 165, 32, 0.55);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-img:hover {
+    transform: scale(1.04);
+    box-shadow: 0 0 30px 7px rgba(218, 165, 32, 0.7);
+}
+
+.hero-text {
+    max-width: 700px;
+}
+
+.hero-tag {
+    display: inline-block;
+    margin-bottom: 14px;
+    color: #d4af37;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.hero-text h1 {
+    margin-bottom: 10px;
+    color: #fff;
+    font-size: clamp(2.2rem, 5vw, 3rem);
+}
+
+.hero-text h2 {
+    margin-bottom: 15px;
+    color: #d4af37;
+    font-size: clamp(1.05rem, 2.5vw, 1.5rem);
+    opacity: 0.95;
+}
+
+.hero-text p {
+    color: rgba(255, 255, 255, 0.78);
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 22px;
+}
+
+/* ========== BUTTONS ========== */
+
+.btn {
+    display: inline-block;
+    padding: 10px 16px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.btn.primary {
+    background: goldenrod;
+    border-color: goldenrod;
+    color: #000;
+}
+
+.btn.secondary {
+    background: transparent;
+    border-color: goldenrod;
+    color: goldenrod;
+}
+
+.btn.primary:hover {
+    background: gold;
+    border-color: gold;
+    color: #000;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 16px rgba(218, 165, 32, 0.25);
+}
+
+.btn.secondary:hover {
+    background: goldenrod;
+    color: #000;
+    transform: translateY(-2px);
+}
+
+/* ========== STICKY NAVBAR ========== */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    padding: 15px 20px;
+    overflow-x: auto;
+    background: rgba(20, 20, 20, 0.88);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+    backdrop-filter: blur(12px) saturate(180%);
+    border-bottom: 1px solid rgba(218, 165, 32, 0.25);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+    scrollbar-width: none;
+}
+
+.navbar::-webkit-scrollbar {
+    display: none;
+}
+
+.navbar a {
+    position: relative;
+    flex: 0 0 auto;
+    color: #d4af37;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+    transition: color 0.3s ease;
+}
+
+.navbar a::after {
+    position: absolute;
+    right: 0;
+    bottom: -6px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    margin: auto;
+    background: gold;
+    box-shadow: 0 0 8px gold;
+    content: "";
+    transition: width 0.3s ease;
+}
+
+.navbar a:hover {
+    color: gold;
+}
+
+.navbar a:hover::after {
+    width: 100%;
+}
+
+/* ========== SECTIONS & TITLES ========== */
+
+.section {
+    width: min(100% - 48px, 1000px);
+    margin: 80px auto;
+    scroll-margin-top: 100px;
+}
+
+.section-title {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 30px;
+    padding: 10px 20px;
+    background: #111;
+    border-left: 3px solid goldenrod;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    color: #fff;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.6rem;
+}
+
+.title-icon {
+    font-size: 1.3rem;
+}
+
+/* ========== ABOUT ========== */
+
+.about-content {
+    width: 100%;
+}
+
+.about-content p {
+    max-width: 800px;
+    margin: 0 auto 20px;
+    color: rgba(218, 165, 32, 0.88);
+}
+
+#about p {
+    max-width: 800px;
+}
+
+.learning-status {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 15px;
+    background: rgba(218, 165, 32, 0.05);
+    border: 1px dashed rgba(218, 165, 32, 0.3);
+    border-radius: 8px;
+}
+
+.learning-status span {
+    margin-right: 5px;
+}
+
+.learning-status code {
+    display: inline-block;
+    margin: 4px 3px;
+    padding: 4px 8px;
+    background: #222;
+    border-radius: 4px;
+    color: gold;
+    font-family: monospace;
+    font-size: 13px;
+}
+
+.about-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 22px;
+}
