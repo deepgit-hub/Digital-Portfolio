@@ -1,946 +1,128 @@
-* { margin: 0; padding: 0; box-sizing: border-box; } 
-body { 
-    background: black; 
-    color: goldenrod;
-    font-family: 'Arial', sans-serif; 
-    line-height: 1.6; }
-h1, h2, h3, h4 { 
-    font-family: 'Orbitron', sans-serif;
-    letter-spacing: 1px;
-    text-transform: uppercase; 
-}
-p {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
-    line-height: 1.8;
-}
 
-/* HERO */
-.hero {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 40px;
-    padding: 60px 20px;
-    text-align: left;
-}
-
-.profile-img {
-    width: 220px;
-    height: 220px;
-    border-radius: 50%;
-    border: 4px solid goldenrod;
-    object-fit: cover;
-}
-
-.hero-buttons {
-    margin-top: 20px;
-    display: flex;
-    gap: 15px;
-}
-/* Update your Hero styles */
-.hero {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 40px;
-    padding: 80px 20px;
-    text-align: left;
-    /* Adding a subtle animation */
-    animation: fadeIn 1.2s ease-out;
-}
-
-.profile-img {
-    width: 220px;
-    height: 220px;
-    border-radius: 50%;
-    border: 3px solid goldenrod;
-    object-fit: cover;
-    /* Increased opacity (0.8) and added 5px spread for a stronger glow */
-    box-shadow: 0 0 25px 5px rgba(218, 165, 32, 0.8); 
-    transition: transform 0.3s ease;
-}
-
-.profile-img:hover {
-    transform: scale(1.30);
-}
-
-/* Keyframes for smooth entry */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* Enhancing the Heading Hierarchy */
-.hero-text h1 {
-    font-size: 3rem;
-    margin-bottom: 10px;
-}
-
-.hero-text h2 {
-    font-size: 1.5rem;
-    color: #d4af37; /* A slightly more metallic gold */
-    margin-bottom: 15px;
-    opacity: 0.9;
-}
-
-/* BUTTONS */
-.btn {
-    padding: 10px 16px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 500;
-    display: inline-block;
-    cursor: pointer;
-    transition: background-color 0.25s ease,
-                color 0.25s ease,
-                transform 0.25s ease;
-}
-
-.primary {
-    background: goldenrod;
-    color: black;
-}
-
-.secondary {
-    border: 1px solid goldenrod;
-    color: goldenrod;
-}
-
-/* BUTTON HOVER */
-.primary:hover {
-    background-color: gold;
-    color: black;
-    transform: translateY(-2px);
-}
-
-.secondary:hover {
-    background-color: goldenrod;
-    color: black;
-    transform: translateY(-2px);
-}
-
-/* ========== STICKY NAVBAR ========== */
-
-.navbar {
-    position: sticky;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    padding: 15px 20px;
-    
-    /* Slightly lighter translucent gray tint so you can see the glass look instantly */
-    background-color: rgba(20, 20, 20, 0.65); 
-    
-    /* Hardware-accelerated blur effects */
-    backdrop-filter: blur(12px) saturate(180%);
-    -webkit-backdrop-filter: blur(12px) saturate(180%);
-    
-    border-bottom: 1px solid rgba(218, 165, 32, 0.25);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
-}
-.navbar a {
-    color: #d4af37;
-    text-decoration: none;
-    font-family: 'Orbitron', sans-serif; /* Matching your tech headings */
-    font-size: 14px;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    position: relative;
-    transition: color 0.3s ease;
-}
-
-.navbar a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -6px;
-    width: 0%;
-    height: 2px;
-    background-color: gold;
-    box-shadow: 0 0 8px gold; /* Adds a tiny glow to the underline */
-    transition: width 0.3s ease;
-}
-
-.navbar a:hover {
-    color: gold;
-}
-
-.navbar a:hover::after {
-    width: 100%;
-}
-
-/* Mobile Responsiveness for Navbar */
-@media (max-width: 768px) {
-    .navbar {
-        gap: 12px;
-        padding: 12px 10px;
-        overflow-x: auto; /* Allows smooth horizontal scrolling on mobile */
-        justify-content: flex-start;
-        white-space: nowrap;
-        /* Hides scrollbar for clean look while keeping functionality */
-        scrollbar-width: none; 
-    }
-    .navbar::-webkit-scrollbar {
-        display: none;
-    }
-}
-
-/* ========== SECTIONS & TITLES ========== */
-.section {
-    max-width: 1000px;
-    margin: 80px auto;
-    padding: 0 24px;
-}
-
-.section-title {
-    font-family: 'Orbitron', sans-serif;
-    color: #fff;
-    font-size: 1.6rem;
-    background: #111;
-    padding: 10px 20px;
-    border-radius: 8px;
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 30px;
-    border-left: 3px solid goldenrod;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-}
-
-.title-icon {
-    font-size: 1.3rem;
-}
-
-/* ========== ABOUT CONTENT ========== */
-.about-content p {
-    margin-bottom: 20px;
-    color: rgba(218, 165, 32, 0.85); /* Clean, legible gold-tinted text */
-}
-
-.learning-status {
-    background: rgba(218, 165, 32, 0.05);
-    padding: 15px;
-    border-radius: 8px;
-    border: 1px dashed rgba(218, 165, 32, 0.3);
-    display: inline-block;
-    margin-top: 10px;
-}
-
-.learning-status code {
-    background: #222;
-    color: gold;
-    padding: 4px 8px;
-    border-radius: 4px;
-    margin-left: 5px;
-    font-family: monospace;
-}
-
-/* ========== SKILLS BADGES ========== */
-.skills-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 25px;
-}
-
-.skills-category {
-    background: #111;
-    padding: 20px;
-    border-radius: 12px;
-    border: 1px solid rgba(218, 165, 32, 0.1);
-}
-
-.skills-category h4 {
-    color: #fff;
-    font-size: 1rem;
-    margin-bottom: 15px;
-    border-bottom: 1px solid rgba(218, 165, 32, 0.2);
-    padding-bottom: 5px;
-}
-
-.badge-group {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.skill-badge {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 13px;
-    font-weight: 500;
-    color: gold;
-    background: rgba(218, 165, 32, 0.1);
-    padding: 6px 12px;
-    border-radius: 6px;
-    border: 1px solid rgba(218, 165, 32, 0.25);
-    transition: all 0.25s ease;
-}
-
-.skill-badge:hover {
-    background: goldenrod;
-    color: black;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(218, 165, 32, 0.3);
-}
-
-/* ========== PROJECTS GRID & CARDS ========== */
-.project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 15px;
-}
-
-.project-card {
-    background: #0d0d0d;
-    padding: 25px;
-    border-radius: 16px;
-    border: 1px solid rgba(218, 165, 32, 0.1);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* Keeps the button cleanly locked at the bottom */
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), 
-                border-color 0.3s ease, 
-                box-shadow 0.3s ease;
-}
-
-/* Subtle corner neon accent lines on hover */
-.project-card::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 3px;
-    height: 0;
-    background: linear-gradient(to bottom, gold, transparent);
-    transition: height 0.3s ease;
-}
-
-.project-card:hover {
-    transform: translateY(-6px);
-    border-color: rgba(218, 165, 32, 0.4);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), 0 0 20px rgba(218, 165, 32, 0.05);
-}
-
-.project-card:hover::before {
-    height: 100%;
-}
-
-.project-card h4 {
-    color: #ffffff;
-    font-size: 1.15rem;
-    margin-bottom: 12px;
-    line-height: 1.4;
-    transition: color 0.3s ease;
-}
-
-.project-card:hover h4 {
-    color: gold;
-}
-
-.project-card p {
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 14px;
-    line-height: 1.6;
-    margin-bottom: 20px;
-}
-
-.card-footer {
-    margin-top: auto; /* Forces action buttons to line up perfectly even if text heights differ */
-}
-
-.project-card .btn.secondary {
-    width: 100%;
-    text-align: center;
-    background: rgba(218, 165, 32, 0.03);
-    border: 1px solid rgba(218, 165, 32, 0.3);
-    font-size: 14px;
-    padding: 10px 0;
-}
-
-.project-card .btn.secondary:hover {
-    background: goldenrod;
-    color: black;
-    border-color: goldenrod;
-    box-shadow: 0 0 15px rgba(218, 165, 32, 0.3);
-}
-/* ========== GALLERY SECTIONS ========== */
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 20px;
-}
-
-.gallery-item {
-    background: #0d0d0d;
-    border-radius: 12px;
-    overflow: hidden;
-    border: 1px solid rgba(218, 165, 32, 0.08);
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), 
-                border-color 0.3s ease, 
-                box-shadow 0.3s ease;
-}
-
-.gallery-img-wrapper {
-    width: 100%;
-    height: 180px; /* Forces uniform crop heights across all portfolio assets */
-    overflow: hidden;
-    background: #111;
-}
-
-.gallery-grid img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.4s ease;
-}
-
-.gallery-item:hover {
-    transform: translateY(-5px);
-    border-color: rgba(218, 165, 32, 0.3);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
-}
-
-/* Elegant zoom on hover without spilling outside boundaries */
-.gallery-item:hover img {
-    transform: scale(1.05);
-}
-
-.gallery-item p {
-    text-align: center;
-    padding: 12px 10px;
-    font-size: 13px;
-    font-weight: 500;
-    color: rgba(255, 255, 255, 0.7);
-    line-height: 1.4;
-    margin-top: auto; /* Keeps captions locked properly */
-}
-
-/* Removing the old full-grid fade effect to keep it accessible and readable */
-.gallery-grid:hover .gallery-item {
-    opacity: 1;
-}
-
-/* ========== YOUTUBE REFERENCES GRID ========== */
-
-.video-grid {
-    display: grid;
-    /* Forces exactly two equal columns on desktop screens */
-    grid-template-columns: repeat(2, 1fr); 
-    gap: 30px; /* Increased gap slightly to match the larger video size */
-    align-items: stretch;
-}
-
-.video-item {
-    background: #0d0d0d;
-    border-radius: 14px;
-    overflow: hidden;
-    border: 1px solid rgba(218, 165, 32, 0.08);
-    padding: 20px; /* Marginally more padding for larger cards */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.video-wrapper {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    border-radius: 8px;
-    overflow: hidden;
-    background: #000;
-}
-
-.video-grid iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-    display: block;
-}
-
-.video-item p {
-    margin-top: 18px;
-    font-size: 15px; /* Bumped text size up slightly to match the larger card scaling */
-    font-weight: 500;
-    line-height: 1.5;
-    color: rgba(255, 255, 255, 0.9);
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.video-item:hover {
-    transform: translateY(-5px);
-    border-color: rgba(218, 165, 32, 0.3);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7);
-}
-
-/* Responsive fix: Stack into 1 column on mobile screens so they don't break */
-@media (max-width: 600px) {
-    .video-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-}
-/* FOOTER */
-.footer {
-    text-align: center;
-    padding: 20px;
-    border-top: 1px solid #333;
-}
-
-/* CONTACT */
-.contact p {
-    margin-bottom: 12px;
-    opacity: 0.85;
-}
-
-/* ACHIEVEMENTS */
-.achievements-list {
-    padding-left: 20px;
-}
-
-.achievements-list li {
-    margin-bottom: 15px;
-    line-height: 1.7;
-    font-size: 16px;
-}
-
-/* ABOUT WIDTH FIX */
-#about p {
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* WHATSAPP BUTTON */
-.whatsapp-btn-wrapper {
-    margin-top: 25px;
-    text-align: center;
-}
-
-.whatsapp-btn {
-    display: inline-block;
-    padding: 14px 22px;
-    border-radius: 30px;
-    background-color: #25D366;
-    color: black;
-    font-weight: 600;
-    text-decoration: none;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.whatsapp-btn:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.5);
-}
-
-/* FLOATING WHATSAPP */
-.floating-whatsapp {
-    position: fixed;
-    bottom: 22px;
-    right: 22px;
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    background-color: black;
-    color: goldenrod;
-    border: 2px solid goldenrod;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    text-decoration: none;
-    box-shadow: 0 8px 20px rgba(218, 165, 32, 0.25);
-    transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
-    z-index: 2000;
-}
-
-.floating-whatsapp:hover {
-    background-color: goldenrod;
-    color: black;
-    transform: translateY(-4px);
-    box-shadow: 0 12px 30px rgba(218, 165, 32, 0.45);
-}
-
-.floating-whatsapp.hidden {
-    opacity: 0;
-    pointer-events: none;
-    transform: translateY(10px);
-}
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-    .hero {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .hero-buttons {
-        justify-content: center;
-    }
-
-    
-
-.profile-img {
-    width: 220px;
-    height: 220px;
-    border-radius: 50%;
-    border: 3px solid #d4af37; /* Crisp gold metallic border */
-    object-fit: cover;
-    
-    /* Remove any strange yellow tint filters */
-    filter: none !important; 
-    mix-blend-mode: normal !important;
-    
-    /* A clean, soft outer gold aura glow */
-    box-shadow: 0 0 20px 3px rgba(218, 165, 32, 0.4); 
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.profile-img:hover {
-    transform: scale(1.03);
-    box-shadow: 0 0 25px 6px rgba(218, 165, 32, 0.65);
-}
-    .section {
-        margin: 40px auto;
+    .instagram-wrapper {
+        width: min(100%, 360px);
     }
 }
 
 @media (max-width: 480px) {
-    .gallery-grid img {
-        height: 180px;
+    .hero {
+        padding: 42px 18px;
+    }
+
+    .profile-img {
+        width: 165px;
+        height: 165px;
+        flex-basis: 165px;
+    }
+
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+
+    .hero-text h2 {
+        font-size: 1rem;
+    }
+
+    .hero-text p {
+        font-size: 14px;
+    }
+
+    .hero-buttons {
+        gap: 10px;
+    }
+
+    .btn {
+        padding: 10px 13px;
+        font-size: 13px;
+    }
+
+    .section {
+        width: min(100% - 30px, 1000px);
+        margin: 42px auto;
+    }
+
+    .section-title {
+        padding: 9px 14px;
+        font-size: 1.15rem;
+    }
+
+    .about-content p {
+        font-size: 14px;
+    }
+
+    .learning-status {
+        display: block;
+        line-height: 2;
+    }
+
+    .project-card {
+        padding: 20px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-img-wrapper {
+        height: 200px;
+    }
+
+    .book-img-container {
+        height: 220px;
+    }
+
+    .contact-container {
+        padding: 28px 18px;
+    }
+
+    .contact-item {
+        width: 100%;
+        padding: 12px 16px;
+        font-size: 12px;
+    }
+
+    .floating-whatsapp {
+        right: 15px;
+        bottom: 15px;
+        width: 44px;
+        height: 44px;
+    }
+
+    #lightbox-close {
+        top: 12px;
+        right: 18px;
+    }
+
+    #lightbox-caption {
+        font-size: 15px;
     }
 }
 
-/* SMOOTH SCROLL */
-html {
-    scroll-behavior: smooth;
-}
-/* ========== LIGHTBOX FULLSCREEN FIX ========== */
-#lightbox {
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.92);
-    display: none;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;   /* IMPORTANT */
-    z-index: 5000;
-}
-
-#lightbox.active {
-    display: flex;
-}
-
-/* Image styling */
-#lightbox-img {
-    max-width: 90%;
-    max-height: 75vh;
-    border-radius: 14px;
-}
-
-/* Caption BELOW image - centered */
-#lightbox-caption {
-    margin-top: 18px;
-    text-align: center;
-    font-size: 18px;
-    font-weight: 700;
-    color: goldenrod;
-    letter-spacing: 0.4px;
-}
-
-/* Close button */
-#lightbox-close {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    font-size: 34px;
-    color: goldenrod;
-    cursor: pointer;
-    user-select: none;
-}
-
-/* ========== ACHIEVEMENTS TIMELINE ========== */
-.achievements-timeline {
-    list-style: none;
-    position: relative;
-    padding-left: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-/* Vertical timeline trace line */
-.achievements-timeline::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 5px;
-    bottom: 5px;
-    width: 2px;
-    background: rgba(218, 165, 32, 0.15);
-}
-
-.achievements-timeline li {
-    position: relative;
-    background: #0d0d0d;
-    padding: 20px;
-    border-radius: 12px;
-    border: 1px solid rgba(218, 165, 32, 0.05);
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    transition: transform 0.25s ease, border-color 0.25s ease;
-}
-
-.achievements-timeline li::before {
-    content: "";
-    position: absolute;
-    left: -24px;
-    top: 24px;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: black;
-    border: 2px solid goldenrod;
-    box-shadow: 0 0 8px gold;
-    z-index: 2;
-}
-
-.achievements-timeline li:hover {
-    transform: translateX(5px);
-    border-color: rgba(218, 165, 32, 0.3);
-}
-
-.achieve-badge {
-    align-self: flex-start;
-    font-family: 'Orbitron', sans-serif;
-    font-size: 11px;
-    font-weight: 600;
-    text-transform: uppercase;
-    padding: 4px 10px;
-    border-radius: 4px;
-    letter-spacing: 0.5px;
-    background: rgba(218, 165, 32, 0.1);
-    color: gold;
-    border: 1px solid rgba(218, 165, 32, 0.2);
-}
-
-.achievements-timeline p {
-    color: rgba(255, 255, 255, 0.75);
-    font-size: 15px;
-    line-height: 1.6;
-}
-
-/* ========== PREMIUM BOOKS GRID ========== */
-.books-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    margin-top: 20px;
-}
-
-.book-card {
-    background: #0d0d0d;
-    border-radius: 16px;
-    overflow: hidden;
-    border: 1px solid rgba(218, 165, 32, 0.08);
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.book-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
-    border-color: rgba(218, 165, 32, 0.25);
-}
-
-.book-img-container {
-    width: 100%;
-    height: 240px; /* Forces all book covers to clip uniformly */
-    background: #151515;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.book-img-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Keeps image proportions clean without stretching */
-    transition: transform 0.5s ease;
-}
-
-.book-card:hover .book-img-container img {
-    transform: scale(1.06);
-}
-
-.book-info {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.book-info h4 {
-    color: #fff;
-    font-size: 1.1rem;
-}
-
-.book-info p {
-    font-size: 14px;
-    color: rgba(255, 255, 255, 0.6);
-    line-height: 1.6;
-}
-/* ========== SERVICES SECTION ========== */
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
-    margin-top: 20px;
-}
-/* ========== DUAL BUTTON LAYOUT FOR JS CARDS ========== */
-.card-footer.dynamic-buttons {
-    display: flex !important;
-    gap: 12px !important;
-    width: 100%;
-}
-
-/* Adjusting buttons to share equal horizontal space */
-.card-footer.dynamic-buttons .btn {
-    flex: 1; 
-    text-align: center;
-    padding: 10px 0;
-    font-size: 13px;
-    font-weight: 500;
-    border-radius: 6px;
-    text-decoration: none;
-    transition: all 0.25s ease;
-}
-
-/* Style for the new prominent Live Demo button */
-.btn.primary.demo-btn {
-    background: goldenrod !important;
-    color: #000000 !important;
-    border: 1px solid goldenrod !important;
-}
-
-.btn.primary.demo-btn:hover {
-    background: gold !important;
-    border-color: gold !important;
-    box-shadow: 0 0 15px rgba(255, 215, 0, 0.4) !important;
-    transform: translateY(-1px);
-}
-
-/* Responsive adjustment so buttons stack cleanly on narrow mobile devices */
 @media (max-width: 360px) {
     .card-footer.dynamic-buttons {
-        flex-direction: column !important;
+        flex-direction: column;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
     }
 }
 
-/* ========== CONTACT PANEL ========== */
-.contact-container {
-    background: #0d0d0d;
-    border-radius: 16px;
-    padding: 40px 30px;
-    border: 1px solid rgba(218, 165, 32, 0.1);
-    text-align: center;
-    max-width: 700px;
-    margin: 0 auto;
+/* ========== ACCESSIBILITY & MOTION ========== */
+
+:focus-visible {
+    outline: 2px solid gold;
+    outline-offset: 4px;
 }
 
-.contact-lead {
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 16px;
-    line-height: 1.6;
-    margin-bottom: 30px;
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
 }
 
-.contact-links {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.contact-item {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background: rgba(218, 165, 32, 0.05);
-    border: 1px solid rgba(218, 165, 32, 0.3);
-    padding: 12px 24px;
-    border-radius: 8px;
-    color: gold;
-    text-decoration: none;
-    font-family: 'Orbitron', sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    transition: all 0.25s ease;
-}
-
-.contact-item:hover {
-    background: goldenrod;
-    color: black;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(218, 165, 32, 0.3);
-}
-
-/* ========== PREMIUM FOOTER ========== */
-.portfolio-footer {
-    margin-top: 100px;
-    padding-top: 30px;
-    border-top: 1px solid rgba(218, 165, 32, 0.1);
-    text-align: center;
-}
-
-.portfolio-footer p {
-    color: rgba(255, 255, 255, 0.4);
-    font-size: 13px;
-    letter-spacing: 0.5px;
-}
-
-.footer-tag {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 11px !important;
-    text-transform: uppercase;
-    color: rgba(218, 165, 32, 0.4) !important;
-    margin-top: 8px;
-}
-
-
-.contact-links {
-    position: relative !important;
-    z-index: 10; /* Forces the buttons to sit on top of any invisible background layers */
-    display: flex !important;
-    justify-content: center !important;
-    gap: 20px !important;
-    margin-top: 20px;
-}
-
-.contact-item {
-    cursor: pointer !important; /* Forces the browser to show the clicking hand icon */
-    pointer-events: auto !important; /* Re-enables clicking if it was accidentally disabled by another style */
-}
-.contact-item.whatsapp-btn:hover {
-    background: #25D366 !important; /* WhatsApp Green */
-    border-color: #25D366 !important;
-    color: #ffffff !important;
-    box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4) !important;
-}
